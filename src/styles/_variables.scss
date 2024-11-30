@@ -1,0 +1,44 @@
+// Colors
+$background-primary: #0A0B0D;
+$background-secondary: #18191D;
+$background-card: #1E1F23;
+
+$primary-main: #784FFE;
+$primary-light: #9C7FFF;
+$primary-dark: #6340D6;
+
+$text-primary: #FFFFFF;
+$text-secondary: #A0A3B1;
+$text-disabled: #6B7280;
+
+// Border Colors
+$border-primary: rgba(255, 255, 255, 0.1);
+$border-secondary: rgba(255, 255, 255, 0.05);
+
+// Gradients
+$gradient-purple: linear-gradient(90deg, #784FFE 0%, #9C7FFF 100%);
+$gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
+$gradient-border: linear-gradient(180deg, rgba($primary-main, 0.5) 0%, rgba($primary-main, 0.1) 100%);
+$gradient-background: linear-gradient(180deg, rgba($primary-main, 0.15) 0%, rgba($primary-main, 0.03) 100%);
+
+// Spacing
+$spacing-xs: 0.25rem;  // 4px
+$spacing-sm: 0.5rem;   // 8px
+$spacing-md: 1rem;     // 16px
+$spacing-lg: 1.5rem;   // 24px
+$spacing-xl: 2rem;     // 32px
+
+// Border Radius
+$radius-sm: 0.25rem;   // 4px
+$radius-md: 0.5rem;    // 8px
+$radius-lg: 1rem;      // 16px
+$radius-full: 9999px;
+
+// Transitions
+$transition-base: all 0.2s ease-in-out;
+$transition-slow: all 0.3s ease-in-out;
+
+// Z-index
+$z-header: 1000;
+$z-modal: 2000;
+$z-tooltip: 3000;

@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.article-container-style {
+  border-radius: 16px;
+  border: 1px solid rgba(139, 138, 160, 0.15);
+  border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
+  background: #202028;
+  background: color(display-p3 0.1255 0.1255 0.1529);
+}
+
+.background-panel{
+  border-radius: 12px;
+  background: #27272E;
+  background: color(display-p3 0.1529 0.1529 0.1765);
+}
+
+.outer-container-style {
+  border-radius: 20px;
+  border: 1px solid rgba(139, 138, 160, 0.15);
+  border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
+  background: rgba(255, 255, 255, 0.01);
+  background: color(display-p3 1 1 1 / 0.01);
+  backdrop-filter: blur(10px);  
+}
+
+.guardian-container-style {
+  border-radius: 12px;
+  border: 1px solid rgba(139, 138, 160, 0.15);
+  border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
+  background: #27272E;
+  background: color(display-p3 0.1529 0.1529 0.1765);
+}
+
+.guardian-container-active-style {
+  border-radius: 12px;
+  border: 1px solid rgba(190, 158, 255, 0.80);
+  border: 1px solid color(display-p3 0.7236 0.6252 0.9994 / 0.80);
+  background: linear-gradient(180deg, rgba(255, 121, 255, 0.30) -11.76%, rgba(227, 91, 223, 0.30) 48.65%, rgba(148, 98, 224, 0.30) 97.06%);
+  background: linear-gradient(180deg, color(display-p3 0.9922 0.5098 1 / 0.00) -11.76%, color(display-p3 0.8275 0.3922 0.851 / 0.30) 48.65%, color(display-p3 0.5529 0.3922 0.851 / 0.30) 97.06%);
+}

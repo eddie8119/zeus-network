@@ -1,0 +1,68 @@
+// Flexbox mixins
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Media queries
+@mixin mobile {
+  @media (max-width: 640px) { @content; }
+}
+
+@mixin tablet {
+  @media (min-width: 641px) and (max-width: 1024px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 1025px) { @content; }
+}
+
+// Typography
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Transitions
+@mixin transition($property: all, $duration: 0.2s, $timing: ease-in-out) {
+  transition: $property $duration $timing;
+}
+
+// Hover effects
+@mixin hover-opacity {
+  @include transition(opacity);
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+// Card styles
+@mixin card-base {
+  background-color: $background-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md;
+  box-shadow: 0px 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+// Button styles
+@mixin button-base {
+  @include flex-center;
+  @include transition;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $radius-md;
+  cursor: pointer;
+  
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
