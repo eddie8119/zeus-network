@@ -1,0 +1,40 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.input-container {
+  border-radius: 16px;
+  border: 1px solid rgba(139, 138, 160, 0.15);
+  border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
+  background: #16161B;
+  background: color(display-p3 0.0863 0.0863 0.1059);
+  transition: all 0.2s ease-in-out;
+   
+  &:hover,
+  &.focused {    
+    border: 1px solid #4A4B4F;
+    border: 1px solid color(display-p3 0.2902 0.2941 0.3098);   
+    box-shadow: 0px 0px 16px 0px rgba(139, 138, 160, 0.25) inset;
+    box-shadow: 0px 0px 16px 0px color(display-p3 0.5451 0.5412 0.6196 / 0.25) inset;
+  }
+}
+
+.input-inner-text { 
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px;
+ 
+  &:not(:focus):not(:hover):placeholder-shown {
+    color: rgba(255, 255, 255, 0.3);
+  }
+  
+  &:focus {
+    @apply text-text-primary;
+  }
+
+  &:not(:placeholder-shown) {
+    color: #8B8AA0;;
+  }
+}

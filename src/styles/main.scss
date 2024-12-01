@@ -4,7 +4,7 @@
 
 @import 'variables';
 @import 'mixins';
-@import 'global';
+@import 'input';
 @import 'epochInfo';
 @import 'container';
 @import 'gradient';
@@ -60,6 +60,7 @@ input {
   }
 }
 
+
 // Utility classes
 .container {
   width: 100%;
@@ -91,4 +92,8 @@ input {
 .fade-exit-active {
   opacity: 0;
   @include transition(opacity, 0.3s);
+}
+
+.article-container-title{
+  @apply text-[16px] font-semibold leading-4 text-text-primary
 }
