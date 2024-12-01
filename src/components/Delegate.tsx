@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import zeusToken from '../assets/zeus-token.svg';
 import GuardianButton from './delegate/GuardianButton';
 import DelegatingPeriod from './delegate/DelegatingPeriod';
@@ -25,7 +25,15 @@ const guardiansList: GuardianOption[] = [
 
 const Delegate: React.FC = () => {
   const [selectedGuardian, setSelectedGuardian] = useState<number>(0);
-  const [amount, setAmount] = useState<number>(1300);
+  const [amount, setAmount] = useState<number>(0);
+  const [apy, setApy] = useState<number>(0);
+  const [selectedPeriod, setSelectedPeriod] = useState<number>(0);
+  const [calculateRewards, setCalculateRewards] = useState<number>(0);
+
+  useEffect(() => {
+    const value = Math.round(amount * (1 + apy / 100));
+    setCalculateRewards(value);
+  }, [amount, apy]);
 
   return (
     <section className="outer-container-style-desk mt-[49px] grid w-full grid-cols-1 p-2 pt-4 md:mt-8">
@@ -35,7 +43,7 @@ const Delegate: React.FC = () => {
       <div className="outer-container-style-mobile grid w-full grid-cols-1 gap-2 p-2 md:p-0 lg:grid-cols-2 lg:gap-3">
         {/* Left Column - Deposit and Period Selection */}
         <div className="gap- flex flex-col gap-4">
-          <article className="article-container-style flex flex-col gap-3 p-[18px]">
+          <article className="article-container-style flex flex-col gap-3 p-4">
             {/* Deposit Input */}
             <form className=" ">
               <div className="mb-2 flex h-[18px] items-center justify-between">
@@ -58,7 +66,12 @@ const Delegate: React.FC = () => {
           {/*  */}
           <div className="hidden md:block">
             <div className="flex flex-col gap-3">
-              <DelegatingPeriod />
+              <DelegatingPeriod
+                calculateRewards={calculateRewards}
+                selectedPeriod={selectedPeriod}
+                setSelectedPeriod={setSelectedPeriod}
+                setApy={setApy}
+              />
               <DelegateButton disabled={true} onClick={() => {}} />
             </div>
           </div>
@@ -82,7 +95,12 @@ const Delegate: React.FC = () => {
           </div>
         </article>
         <div className="flex flex-col gap-2 md:hidden">
-          <DelegatingPeriod />
+          <DelegatingPeriod
+            calculateRewards={calculateRewards}
+            selectedPeriod={selectedPeriod}
+            setSelectedPeriod={setSelectedPeriod}
+            setApy={setApy}
+          />
           <DelegateButton disabled={true} onClick={() => {}} />
         </div>
       </div>

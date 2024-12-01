@@ -1,16 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DelegatingPeriodButton from './DelegatingPeriodButton';
 import info from '../../assets/info.svg';
 import zeusToken from '../../assets/zeus-token.svg';
 import lineChartUp from '../../assets/epochInfo/line-chart-up-filled.svg';
+import { useNumberFormat } from '../../hooks/useNumberFormat';
+
+interface DelegatingPeriodProps {
+  calculateRewards: number;
+  selectedPeriod: number;
+  setSelectedPeriod: (value: number) => void;
+  setApy: (value: number) => void;
+}
 
 interface PeriodOption {
   id: number;
   epochs: number;
   apy: number;
 }
-
-const estimatedRewards = 234.8335;
 
 const periodsList: PeriodOption[] = [
   { id: 0, epochs: 3, apy: 5 },
@@ -19,8 +25,13 @@ const periodsList: PeriodOption[] = [
   { id: 3, epochs: 24, apy: 40 },
 ];
 
-const DelegatingPeriod: React.FC = () => {
-  const [selectedPeriod, setSelectedPeriod] = useState<number>(0);
+const DelegatingPeriod: React.FC<DelegatingPeriodProps> = ({
+  calculateRewards,
+  selectedPeriod,
+  setSelectedPeriod,
+  setApy,
+}) => {
+  const { formatNumber, parseNumber } = useNumberFormat();
 
   return (
     <article className="article-container-style flex flex-col p-4 md:max-h-[388px]">
@@ -39,7 +50,10 @@ const DelegatingPeriod: React.FC = () => {
             epochs={period.epochs}
             apy={period.apy}
             isSelected={selectedPeriod === period.id}
-            onClick={() => setSelectedPeriod(period.id)}
+            onClick={() => {
+              setSelectedPeriod(period.id);
+              setApy(period.apy);
+            }}
           />
         ))}
       </div>
@@ -51,7 +65,9 @@ const DelegatingPeriod: React.FC = () => {
         </div>
         <div className="flex space-x-2">
           <img src={zeusToken} alt="ZEUS token" className="h-[24px] w-[24px]" />
-          <p className="text-[18px] font-semibold text-text-primary">{estimatedRewards}</p>
+          <p className="text-[18px] font-semibold text-text-primary">
+            {formatNumber(calculateRewards)}
+          </p>
         </div>
       </div>
     </article>
