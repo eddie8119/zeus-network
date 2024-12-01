@@ -6,3 +6,11 @@
 .article-container-title{
   @apply text-[16px] font-semibold leading-4 text-text-primary
 }
+
+.input-container {
+  border-radius: 16px;
+  border: 1px solid rgba(139, 138, 160, 0.15);
+  border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
+  background: #16161B;
+  background: color(display-p3 0.0863 0.0863 0.1059);
+}

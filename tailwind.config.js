@@ -18,7 +18,9 @@ module.exports = {
           primary: '#0F0F13', // 主背景色
           secondary: 'rgba(26, 26, 31, 0.5)', // 次背景色，如 header 和卡片背景
           card: '#1E1F23', // 卡片內部背景
-          card: '#27272E',
+          panel: '#27272E',
+          tab: '#202028',
+          input: '#16161B',
         },
         // 主題色系
         primary: {

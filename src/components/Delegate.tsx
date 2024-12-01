@@ -3,16 +3,12 @@ import zeusToken from '../assets/zeus-token.svg';
 import GuardianButton from './delegate/GuardianButton';
 import DelegatingPeriod from './delegate/DelegatingPeriod';
 import DelegateButton from './delegate/DelegateButton';
+import DepositInput from './delegate/DepositInput';
 
 interface GuardianOption {
   id: number;
   name: string;
   amount: number;
-}
-
-interface PeriodOption {
-  epochs: number;
-  apy: number;
 }
 
 const guardiansList: GuardianOption[] = [
@@ -26,17 +22,10 @@ const guardiansList: GuardianOption[] = [
   { id: 7, name: 'Guardian8', amount: 40000000 },
 ];
 
-const delegatingPeriods: PeriodOption[] = [
-  { epochs: 3, apy: 5 },
-  { epochs: 6, apy: 5.75 },
-  { epochs: 12, apy: 15 },
-  { epochs: 24, apy: 40 },
-];
-
 const Delegate: React.FC = () => {
   const [selectedGuardian, setSelectedGuardian] = useState<number>(0);
   const [amount, setAmount] = useState<number>(1300);
-  const balance = 1000000;
+  const balance: number = 1000000;
 
   return (
     <section className="grid w-full grid-cols-1">
@@ -56,31 +45,13 @@ const Delegate: React.FC = () => {
                 >
                   Deposit
                 </label>
-                <div className="text-text-medium flex text-[14px]">
+                <div className="flex text-[14px] text-text-medium">
                   <p className="font-semibold">Balance</p>
                   <img src={zeusToken} alt="ZEUS token" className="h-[18px] w-[18px]" />
                   <p className="font-medium">{balance.toLocaleString()}</p>
                 </div>
               </div>
-              <div className="flex items-center gap-2">
-                <img src={zeusToken} alt="ZEUS token" className="h-5 w-5" />
-                <span className="text-sm font-medium">ZEUS</span>
-                <input
-                  id="deposit"
-                  type="number"
-                  value={amount}
-                  onChange={e => setAmount(Number(e.target.value))}
-                  className="w-full bg-transparent text-right text-base font-semibold text-text-primary outline-none"
-                  aria-label="Deposit amount"
-                />
-                <button
-                  type="button"
-                  className="rounded-full bg-[rgba(255,255,255,0.1)] px-3 py-1 text-xs font-medium text-text-primary"
-                  aria-label="Set maximum amount"
-                >
-                  MAX
-                </button>
-              </div>
+              <DepositInput amount={amount} setAmount={setAmount} />
             </form>
           </article>
 
@@ -98,7 +69,7 @@ const Delegate: React.FC = () => {
           <header className="">
             <h2 className="article-container-title">Select a Guardian</h2>
           </header>
-          <div className="flex flex-col gap-2 overflow-scroll">
+          <div className="flex flex-col gap-2 overflow-y-scroll">
             {guardiansList.map(guardian => (
               <GuardianButton
                 key={guardian.id}
