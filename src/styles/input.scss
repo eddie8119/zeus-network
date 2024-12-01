@@ -27,16 +27,14 @@
   line-height: 24px;
   direction: ltr;
   text-align: right;
- 
-  &:not(:focus):not(:hover):placeholder-shown {
-    color: rgba(255, 255, 255, 0.3);
-  }
-  
+  transition: color 0.15s ease-in-out; //平滑的過渡效果
+
+  &:hover,
   &:focus {
     @apply text-text-primary;
-  }
-
-  &:not(:placeholder-shown) {
-    color: #8B8AA0;;
+  } 
+  
+  &:not(:placeholder-shown):not(:hover):not(:focus) {
+    color: #8B8AA0;
   }
 }
