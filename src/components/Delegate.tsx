@@ -40,9 +40,9 @@ const Delegate: React.FC = () => {
       <header className="mb-3 p-2">
         <h2 className="text-[18px] font-medium leading-6 text-text-primary">Delegate</h2>
       </header>
-      <div className="outer-container-style-mobile grid w-full grid-cols-1 gap-2 p-2 md:grid-cols-2 md:gap-3 md:p-0">
+      <div className="outer-container-style-mobile flex w-full flex-col gap-2 p-2 md:flex-row md:gap-3 md:p-0">
         {/* Left Column - Deposit and Period Selection */}
-        <div className="flex flex-col gap-4">
+        <div className="flex flex-col gap-4 md:w-1/2">
           <article className="article-container-style flex flex-col gap-3 p-4">
             {/* Deposit Input */}
             <form>
@@ -78,11 +78,11 @@ const Delegate: React.FC = () => {
         </div>
 
         {/* Right Column - Guardian Selection */}
-        <article className="article-container-style flex max-h-[353px] flex-col p-4 md:max-h-[399px]">
+        <article className="article-container-style flex flex-1 flex-col p-4 md:w-1/2">
           <header className="mb-4">
             <h2 className="article-container-title">Select a Guardian</h2>
           </header>
-          <div className="flex flex-col gap-2 overflow-y-scroll">
+          <div className="flex max-h-[360px] flex-col gap-2 overflow-y-scroll md:max-h-[330px]">
             {guardiansList.map(guardian => (
               <GuardianButton
                 key={guardian.id}
