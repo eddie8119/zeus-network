@@ -30,13 +30,13 @@ const linksList: LinkItem[] = [
 const Footer: React.FC = () => {
   return (
     <footer className="mx-auto w-full py-8">
-      <div className="flex flex-col items-center space-y-8 md:flex-row md:justify-between md:space-y-0">
+      <div className="flex flex-col space-y-8 md:flex-row md:justify-between md:space-y-0">
         {/* Left Section  */}
         <div className="flex flex-col items-center space-y-8 md:items-start md:space-y-6">
-          <div className="flex items-center text-base">
-            <span className="text-text-light">Powered by</span>
+          <div className="flex items-center text-[16px] text-base leading-[24px] text-text-light">
+            <span>Powered by</span>
             <img src={footerZeusLogo} alt="Zeus Network" className="ml-3 mr-2 h-[10px] w-4" />
-            <span className="text-text-primary">ZEUS Network</span>
+            <span>ZEUS Network</span>
           </div>
           {/* Social Links */}
           <div className="flex space-x-4">
@@ -58,17 +58,23 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Right Section  */}
-        <div className="flex flex-col items-center space-y-2 text-sm md:items-end">
+        <div className="flex flex-col items-center space-y-2 text-sm md:items-end md:space-y-6">
           {/* Links */}
-          <div className="text-text-light flex space-x-5">
+          <div className="flex space-x-5">
             {linksList.map(item => (
-              <a key={item.id} href={item.link} className="hover:text-text-primary">
+              <a
+                key={item.id}
+                href={item.link}
+                className="text-[16px] font-medium leading-[24px] text-text-light hover:text-text-primary"
+              >
                 {item.label}
               </a>
             ))}
           </div>
           {/* Copyright */}
-          <span className="text-text-dark"> 2024, ZEUS Network All rights reserved.</span>
+          <span className="text-[14px] font-medium leading-[20px] text-text-dark">
+            2024, ZEUS Network All rights reserved.
+          </span>
         </div>
       </div>
     </footer>
