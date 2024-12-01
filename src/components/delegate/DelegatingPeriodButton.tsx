@@ -19,13 +19,15 @@ const DelegatingPeriodButton: React.FC<DelegatingPeriodButtonProps> = ({
     <button
       key={key}
       onClick={onClick}
-      className={`flex flex-col gap-2 rounded-xl px-4 py-3 ${
-        isSelected ? 'guardian-container-active-style' : 'guardian-container-style'
+      className={`flex flex-col gap-2 rounded-xl px-4 py-3 text-[14px] leading-[18px] ${
+        isSelected
+          ? 'guardian-container-active-style text-text-primary'
+          : 'guardian-container-style text-text-medium'
       }`}
       aria-label={`${epochs} epochs with ${apy}% APY`}
     >
-      <span className="text-xs font-medium text-text-light">{epochs} Epochs</span>
-      <strong className="text-sm font-semibold text-text-primary">{apy}%</strong>
+      <span className="font-medium">{epochs} Epochs</span>
+      <strong className="font-bold">{apy}%</strong>
     </button>
   );
 };
