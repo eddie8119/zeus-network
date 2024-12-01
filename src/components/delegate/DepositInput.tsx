@@ -1,5 +1,6 @@
 import React from 'react';
 import zeusToken from '../../assets/zeus-token.svg';
+import { useNumberFormat } from '../../hooks/useNumberFormat';
 
 interface DepositInputProps {
   amount: number;
@@ -7,6 +8,21 @@ interface DepositInputProps {
 }
 
 const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount }) => {
+  const { formatNumber, parseNumber } = useNumberFormat();
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    //移除輸入值中的所有逗號
+    const rawValue = e.target.value.replace(/,/g, '');
+    if (rawValue === '') {
+      setAmount(0);
+      return;
+    }
+    const numValue = parseNumber(rawValue);
+    if (!isNaN(numValue)) {
+      setAmount(numValue);
+    }
+  };
+
   return (
     <div className="input-container group flex items-center gap-4 p-2 pr-3">
       <div className="flex items-center gap-2 rounded-lg bg-background-tab p-2 pr-3 group-hover:bg-transparent">
@@ -16,10 +32,11 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount }) => {
       <div className="flex flex-1 items-center space-x-3">
         <input
           id="deposit"
-          type="number"
-          value={amount}
-          onChange={e => setAmount(Number(e.target.value))}
-          className="input-inner-text w-full bg-transparent text-right text-[16px] font-semibold leading-[22px] outline-none [appearance:textfield] [&::-webkit-inner-spin-button]:appearance-none [&::-webkit-outer-spin-button]:appearance-none"
+          type="text"
+          inputMode="numeric"
+          value={formatNumber(amount)}
+          onChange={handleChange}
+          className="input-inner-text w-full bg-transparent text-right text-[16px] font-semibold leading-[22px] outline-none"
           aria-label="Deposit amount"
           placeholder="0"
         />
