@@ -5,9 +5,10 @@ interface UseNumberFormatOptions {
 }
 
 export const useNumberFormat = (options: UseNumberFormatOptions = {}) => {
+  // 默認值
   const {
-    maximumFractionDigits = 0,
-    useGrouping = true,
+    maximumFractionDigits = 0,    // 小數位數，默認為0（不顯示小數）
+    useGrouping = true,           // 是否使用千位分隔符，默認為true
     locale = 'en-US'
   } = options;
 
