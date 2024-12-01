@@ -36,7 +36,7 @@ const Delegate: React.FC = () => {
   }, [amount, apy]);
 
   return (
-    <section className="outer-container-style-desk mt-[49px] grid w-full grid-cols-1 p-2 pt-4 md:mt-8">
+    <section className="outer-container-style-desk mt-[49px] grid w-full grid-cols-1 md:mt-8 md:p-2 md:pt-4">
       <header className="mb-3 p-2">
         <h2 className="text-[18px] font-medium leading-6 text-text-primary">Delegate</h2>
       </header>
