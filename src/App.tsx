@@ -2,6 +2,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import EpochInfo from './components/EpochInfo';
 import Delegate from './components/Delegate';
+import TotalLocked from './components/TotalLocked';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <main className="mx-auto">
         <EpochInfo />
         <Delegate />
+        <TotalLocked />
       </main>
       <Footer />
     </div>
