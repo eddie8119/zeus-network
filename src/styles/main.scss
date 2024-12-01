@@ -48,6 +48,18 @@ button {
   }
 }
 
+input {
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+  
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
 // Utility classes
 .container {
   width: 100%;
@@ -80,6 +92,3 @@ button {
   opacity: 0;
   @include transition(opacity, 0.3s);
 }
-
-
-
