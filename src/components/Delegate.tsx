@@ -65,8 +65,8 @@ const Delegate: React.FC = () => {
         </div>
 
         {/* Right Column - Guardian Selection */}
-        <article className="article-container-style flex max-h-[353px] flex-col gap-4 p-4 md:max-h-[388px]">
-          <header className="">
+        <article className="article-container-style flex max-h-[353px] flex-col p-4 md:max-h-[388px]">
+          <header className="mb-4">
             <h2 className="article-container-title">Select a Guardian</h2>
           </header>
           <div className="flex flex-col gap-2 overflow-y-scroll">

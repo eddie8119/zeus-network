@@ -1,6 +1,7 @@
 import React from 'react';
 
 interface DelegatingPeriodButtonProps {
+  key: number;
   epochs: number;
   apy: number;
   isSelected: boolean;
@@ -8,6 +9,7 @@ interface DelegatingPeriodButtonProps {
 }
 
 const DelegatingPeriodButton: React.FC<DelegatingPeriodButtonProps> = ({
+  key,
   epochs,
   apy,
   isSelected,
@@ -15,13 +17,14 @@ const DelegatingPeriodButton: React.FC<DelegatingPeriodButtonProps> = ({
 }) => {
   return (
     <button
+      key={key}
       onClick={onClick}
       className={`flex flex-col gap-2 rounded-xl px-4 py-3 ${
         isSelected ? 'guardian-container-active-style' : 'guardian-container-style'
       }`}
-      aria-pressed={isSelected}
+      aria-label={`${epochs} epochs with ${apy}% APY`}
     >
-      <span className="text-text-light text-xs font-medium">{epochs} Epochs</span>
+      <span className="text-xs font-medium text-text-light">{epochs} Epochs</span>
       <strong className="text-sm font-semibold text-text-primary">{apy}%</strong>
     </button>
   );

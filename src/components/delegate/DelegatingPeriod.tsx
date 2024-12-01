@@ -23,16 +23,16 @@ const DelegatingPeriod: React.FC = () => {
   const [selectedPeriod, setSelectedPeriod] = useState<number>(0);
 
   return (
-    <article className="article-container-style flex flex-col gap-4 p-4 md:max-h-[388px]">
+    <article className="article-container-style flex flex-col p-4 md:max-h-[388px]">
       <header className="mb-5 flex items-center justify-between">
         <div className="flex space-x-2">
           <h2 className="article-container-title">Select Delegating Period</h2>
           <img src={info} alt="info" className="h-[18px] w-[18px]" />
         </div>
-        <span className="text-text-medium flex text-[14px] font-medium">Basic APY: 5%</span>
+        <span className="flex text-[14px] font-medium text-text-medium">Basic APY: 5%</span>
       </header>
 
-      <div className="grid grid-cols-2 gap-2 md:grid-cols-4" aria-label="Delegating periods">
+      <div className="mb-3 grid grid-cols-2 gap-2 md:grid-cols-4" aria-label="Delegating periods">
         {periodsList.map(period => (
           <DelegatingPeriodButton
             key={period.id}

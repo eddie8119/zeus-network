@@ -29,7 +29,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
   };
 
   return (
-    <div className="input-container group flex items-center gap-4 p-2 pr-3">
+    <div className="input-container group flex max-h-14 items-center gap-4 p-2 pr-3">
       <div className="flex items-center gap-2 rounded-lg bg-background-tab p-2 pr-3 transition-all duration-200 ease-in-out group-hover:bg-transparent">
         <img src={zeusToken} alt="ZEUS token" className="h-6 w-6" />
         <span className="text-sm font-medium">ZEUS</span>
