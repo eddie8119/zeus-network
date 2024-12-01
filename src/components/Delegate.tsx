@@ -11,6 +11,7 @@ interface GuardianOption {
   amount: number;
 }
 
+const balance: number = 1000000;
 const guardiansList: GuardianOption[] = [
   { id: 0, name: 'Guardian1', amount: 40000000 },
   { id: 1, name: 'Guardian2', amount: 40000000 },
@@ -25,14 +26,13 @@ const guardiansList: GuardianOption[] = [
 const Delegate: React.FC = () => {
   const [selectedGuardian, setSelectedGuardian] = useState<number>(0);
   const [amount, setAmount] = useState<number>(1300);
-  const balance: number = 1000000;
 
   return (
-    <section className="grid w-full grid-cols-1">
-      <header className="hiddem mb-3 p-2 md:block">
+    <section className="outer-container-style-desk mt-[49px] grid w-full grid-cols-1 p-2 pt-4 md:mt-8">
+      <header className="mb-3 p-2">
         <h2 className="text-[18px] font-medium leading-6 text-text-primary">Delegate</h2>
       </header>
-      <div className="outer-container-style grid w-full grid-cols-1 gap-2 p-2 lg:grid-cols-2 lg:gap-3">
+      <div className="outer-container-style-mobile grid w-full grid-cols-1 gap-2 p-2 md:p-0 lg:grid-cols-2 lg:gap-3">
         {/* Left Column - Deposit and Period Selection */}
         <div className="gap- flex flex-col gap-4">
           <article className="article-container-style flex flex-col gap-3 p-[18px]">

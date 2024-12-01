@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
+@mixin mobile {
+  @media (max-width: 767px) { @content; }
+}
+
+@mixin desktop {
+  @media (min-width: 768px) { @content; }
+}
+
 .article-container-style {
   border-radius: 16px;
   border: 1px solid rgba(139, 138, 160, 0.15);
@@ -17,12 +25,22 @@
 }
 
 .outer-container-style {
-  border-radius: 20px;
-  border: 1px solid rgba(139, 138, 160, 0.15);
-  border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
-  background: rgba(255, 255, 255, 0.01);
-  background: color(display-p3 1 1 1 / 0.01);
-  backdrop-filter: blur(10px);  
+    border-radius: 20px;
+    border: 1px solid rgba(139, 138, 160, 0.15);
+    border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
+    backdrop-filter: blur(10px);  
+}
+
+.outer-container-style-mobile {
+  @include mobile {
+    @apply outer-container-style 
+  }
+}
+
+.outer-container-style-desk {
+  @include desktop {
+    @apply outer-container-style 
+  }
 }
 
 .guardian-container-style {
