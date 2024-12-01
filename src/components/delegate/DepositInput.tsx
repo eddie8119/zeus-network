@@ -47,7 +47,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
         />
         <button
           type="button"
-          className="gradient-btn rounded-xl px-4 py-2 text-[14px] font-semibold leading-[20px] text-black"
+          className="gradient-btn btn-active rounded-xl px-4 py-2 text-[14px] font-semibold leading-[20px] text-black"
           aria-label="Set maximum amount"
           onClick={() => setAmount(balance)}
         >
