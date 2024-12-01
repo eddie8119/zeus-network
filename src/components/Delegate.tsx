@@ -51,7 +51,7 @@ const Delegate: React.FC = () => {
                   <p className="font-medium">{balance.toLocaleString()}</p>
                 </div>
               </div>
-              <DepositInput amount={amount} setAmount={setAmount} />
+              <DepositInput amount={amount} setAmount={setAmount} balance={balance} />
             </form>
           </article>
 

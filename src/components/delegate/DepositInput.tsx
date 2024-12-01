@@ -5,9 +5,10 @@ import { useNumberFormat } from '../../hooks/useNumberFormat';
 interface DepositInputProps {
   amount: number;
   setAmount: (value: number) => void;
+  balance: number;
 }
 
-const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount }) => {
+const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance }) => {
   const { formatNumber, parseNumber } = useNumberFormat();
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -18,6 +19,10 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount }) => {
       return;
     }
     const numValue = parseNumber(rawValue);
+    if (numValue > balance) {
+      setAmount(balance);
+      return;
+    }
     if (!isNaN(numValue)) {
       setAmount(numValue);
     }
@@ -44,6 +49,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount }) => {
           type="button"
           className="gradient-btn rounded-xl px-4 py-2 text-[14px] font-semibold leading-[20px] text-black"
           aria-label="Set maximum amount"
+          onClick={() => setAmount(balance)}
         >
           MAX
         </button>
