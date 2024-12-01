@@ -40,12 +40,12 @@ const Delegate: React.FC = () => {
       <header className="mb-3 p-2">
         <h2 className="text-[18px] font-medium leading-6 text-text-primary">Delegate</h2>
       </header>
-      <div className="outer-container-style-mobile grid w-full grid-cols-1 gap-2 p-2 md:p-0 lg:grid-cols-2 lg:gap-3">
+      <div className="outer-container-style-mobile grid w-full grid-cols-1 gap-2 p-2 md:grid-cols-2 md:gap-3 md:p-0">
         {/* Left Column - Deposit and Period Selection */}
-        <div className="gap- flex flex-col gap-4">
+        <div className="flex flex-col gap-4">
           <article className="article-container-style flex flex-col gap-3 p-4">
             {/* Deposit Input */}
-            <form className=" ">
+            <form>
               <div className="mb-2 flex h-[18px] items-center justify-between">
                 <label
                   htmlFor="deposit"
@@ -78,7 +78,7 @@ const Delegate: React.FC = () => {
         </div>
 
         {/* Right Column - Guardian Selection */}
-        <article className="article-container-style flex max-h-[353px] flex-col p-4 md:max-h-[388px]">
+        <article className="article-container-style flex max-h-[353px] flex-col p-4 md:max-h-[399px]">
           <header className="mb-4">
             <h2 className="article-container-title">Select a Guardian</h2>
           </header>
@@ -94,6 +94,7 @@ const Delegate: React.FC = () => {
             ))}
           </div>
         </article>
+
         <div className="flex flex-col gap-2 md:hidden">
           <DelegatingPeriod
             calculateRewards={calculateRewards}

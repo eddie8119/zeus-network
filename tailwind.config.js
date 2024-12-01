@@ -37,10 +37,10 @@ module.exports = {
         // 文字色系
         text: {
           primary: '#F1F0F3', // 最亮/主要文字
-          light: '#C7C5D1', // 次亮文字
-          medium: '#C5C5CF', // 中等亮度文字
-          dark: '#8B8A9E', // 較暗文字
-          disabled: '#6B7280', // 禁用狀態文字
+          light: '#C7C5D1',
+          medium: '#C5C5CF',
+          dark: '#8B8A9E',
+          disabled: '#6B7280',
         },
         // 邊框和分隔線
         border: {

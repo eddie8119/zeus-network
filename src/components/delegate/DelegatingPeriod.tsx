@@ -34,7 +34,7 @@ const DelegatingPeriod: React.FC<DelegatingPeriodProps> = ({
   const { formatNumber, parseNumber } = useNumberFormat();
 
   return (
-    <article className="article-container-style flex flex-col p-4 md:max-h-[388px]">
+    <article className="article-container-style flex flex-col p-4">
       <header className="mb-5 flex items-center justify-between">
         <div className="flex space-x-2">
           <h2 className="article-container-title">Select Delegating Period</h2>

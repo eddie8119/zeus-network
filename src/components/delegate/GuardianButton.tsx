@@ -19,14 +19,14 @@ const GuardianButton: React.FC<GuardianButtonProps> = ({
     <button
       key={key}
       onClick={onClick}
-      className={`flex items-center justify-between rounded-xl p-3 ${
+      className={`flex items-center justify-between rounded-xl px-4 py-3 text-text-medium ${
         isSelected ? 'guardian-container-active-style' : 'guardian-container-style'
       }`}
     >
-      <span className="text-sm font-medium text-text-primary">{name}</span>
-      <span className="text-sm text-text-light">
+      <p className="text-[16px] font-semibold leading-6">{name}</p>
+      <p className="text-[14px] font-medium">
         $ZEUS {amount.toLocaleString()} / {amount.toLocaleString()}
-      </span>
+      </p>
     </button>
   );
 };
