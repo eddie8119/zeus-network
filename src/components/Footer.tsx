@@ -29,10 +29,10 @@ const linksList: LinkItem[] = [
 
 const Footer: React.FC = () => {
   return (
-    <footer className="mx-auto mt-[49px] w-full py-8 md:mt-[84px] md:p-8 md:pt-9">
-      <div className="flex flex-col space-y-8 md:flex-row md:justify-between md:space-y-0">
+    <footer className="mx-auto mt-[49px] w-full py-8 sm:mt-[84px] sm:p-8 sm:pt-9">
+      <div className="flex flex-col space-y-8 sm:flex-row sm:justify-between sm:space-y-0">
         {/* Left Section  */}
-        <div className="flex flex-col items-center space-y-8 md:items-start md:space-y-6">
+        <div className="flex flex-col items-center space-y-8 sm:items-start sm:space-y-6">
           <div className="flex items-center text-[16px] text-base leading-[24px] text-text-light">
             <span>Powered by</span>
             <img src={footerZeusLogo} alt="Zeus Network" className="ml-3 mr-2 h-[10px] w-4" />
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Right Section  */}
-        <div className="flex flex-col items-center space-y-2 text-sm md:items-end md:space-y-6">
+        <div className="flex flex-col items-center space-y-2 text-sm sm:items-end sm:space-y-6">
           {/* Links */}
           <div className="flex space-x-5">
             {linksList.map(item => (

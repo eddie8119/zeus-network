@@ -21,7 +21,7 @@ const StatsItem: React.FC<StatsItemProps> = ({
 }) => {
   return (
     <article
-      className={`flex w-1/2 flex-col gap-1 md:flex-row md:items-center ${isSecond ? 'pl-3' : ''}`}
+      className={`flex w-1/2 flex-col gap-1 sm:flex-row sm:items-center ${isSecond ? 'pl-3' : ''}`}
     >
       <header className="flex h-[18px] items-center gap-1">
         <img src={icon} alt={label} className="h-3 w-3" />
@@ -49,7 +49,7 @@ const EpochInfo: React.FC = () => {
   return (
     <section className="mt-12 grid w-full grid-cols-1 gap-3">
       {/* Epoch remaining */}
-      <div className="grid grid-cols-1 gap-3 px-2 md:hidden">
+      <div className="grid grid-cols-1 gap-3 px-2 sm:hidden">
         {/* Epoch Header */}
         <div className="flex items-center justify-between">
           <header className="flex items-center space-x-1">
@@ -69,8 +69,8 @@ const EpochInfo: React.FC = () => {
       </div>
 
       {/* Stats Container */}
-      <article className="outer-container-style flex px-3 py-4 md:p-1">
-        <div className="epochInfo-stats-container-style-desk flex w-full md:p-4">
+      <article className="outer-container-style flex px-3 py-4 sm:p-1">
+        <div className="epochInfo-stats-container-style-desk flex w-full sm:p-4">
           <StatsItem icon={lock} label="TOTAL $ZEUS LOCKED" value={totalLocked} showToken={true} />
           <StatsItem
             icon={userProfile}

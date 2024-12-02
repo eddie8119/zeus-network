@@ -34,9 +34,9 @@ const GuardianButton: React.FC<GuardianButtonProps> = ({
         width="45px"
         height="10px"
         active={isSelected}
-        className="md:hidden"
+        className="sm:hidden"
       />
-      <p className="hidden text-[14px] font-medium md:block">
+      <p className="hidden text-[14px] font-medium sm:block">
         $ZEUS {amount.toLocaleString()} / {guardianAmountTotal.toLocaleString()}
       </p>
     </button>

@@ -59,12 +59,12 @@ const Header: React.FC = () => {
             </a>
 
             {/* Navigation - desk */}
-            <nav className="hidden flex-col space-x-3 md:flex md:flex-row">
+            <nav className="hidden flex-col space-x-3 sm:flex sm:flex-row">
               {navList.map(item => (
                 <a
                   href={`/${item.id}`}
                   key={item.id}
-                  className={`${currentPath === item.id ? 'header-tab' : ''} header-tab-hover flex items-center rounded-button px-3 py-2 text-text-primary transition-colors`}
+                  className={`${currentPath === item.id ? 'header-tab' : ''} header-tab-hover rounded-button flex items-center px-3 py-2 text-text-primary transition-colors`}
                 >
                   <img
                     src={item.icon}
@@ -78,7 +78,7 @@ const Header: React.FC = () => {
           </div>
 
           {/* Right section */}
-          <div className="flex items-center space-x-2 md:space-x-3">
+          <div className="flex items-center space-x-2 sm:space-x-3">
             {/* Epoch - desk */}
             <button className="btn-active epoch-container-desk hidden h-10 items-center justify-center rounded-xl px-4 lg:flex lg:space-x-3">
               <ProgressBar progress={80} width="40px" />
@@ -113,7 +113,7 @@ const Header: React.FC = () => {
               <a
                 href={`/${item.id}`}
                 key={item.id}
-                className={`${currentPath === item.id ? 'header-tab' : ''} header-tab-hover flex items-center rounded-button px-3 py-2 text-text-primary transition-colors`}
+                className={`${currentPath === item.id ? 'header-tab' : ''} header-tab-hover rounded-button flex items-center px-3 py-2 text-text-primary transition-colors`}
               >
                 <img
                   src={item.icon}

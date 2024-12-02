@@ -43,7 +43,7 @@ const DelegatingPeriod: React.FC<DelegatingPeriodProps> = ({
         <span className="flex text-[14px] font-medium text-text-medium">Basic APY: 5%</span>
       </header>
 
-      <div className="mb-3 grid grid-cols-2 gap-2 md:grid-cols-4" aria-label="Delegating periods">
+      <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4" aria-label="Delegating periods">
         {periodsList.map(period => (
           <DelegatingPeriodButton
             key={period.id}

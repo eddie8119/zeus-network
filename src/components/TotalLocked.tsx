@@ -131,7 +131,7 @@ const TotalLocked: React.FC = () => {
   }, []);
 
   return (
-    <section className="mt-[48px] grid w-full grid-cols-1 md:mt-8">
+    <section className="mt-[48px] grid w-full grid-cols-1 sm:mt-8">
       <header className="mb-3 p-2">
         <h2 className="text-[18px] font-medium leading-6 text-text-primary">
           Total $ZEUS , $BTC Locked

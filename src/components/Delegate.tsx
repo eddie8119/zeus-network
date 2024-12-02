@@ -35,13 +35,13 @@ const Delegate: React.FC = () => {
   }, [amount, apy]);
 
   return (
-    <section className="outer-container-style-desk mt-[49px] grid w-full grid-cols-1 md:mt-8 md:p-2 md:pt-4">
+    <section className="outer-container-style-desk mt-[49px] grid w-full grid-cols-1 sm:mt-8 sm:p-2 sm:pt-4">
       <header className="mb-3 p-2">
         <h2 className="text-[18px] font-medium leading-6 text-text-primary">Delegate</h2>
       </header>
-      <div className="outer-container-style-mobile flex w-full flex-col gap-2 p-2 md:flex-row md:gap-3 md:p-0">
+      <div className="outer-container-style-mobile flex w-full flex-col gap-2 p-2 sm:flex-row sm:gap-3 sm:p-0">
         {/* Left Column - Deposit and Period Selection */}
-        <div className="flex flex-col gap-4 md:w-1/2">
+        <div className="flex flex-col gap-4 sm:w-1/2">
           <article className="article-container-style flex flex-col gap-3 p-4">
             {/* Deposit Input */}
             <form>
@@ -63,7 +63,7 @@ const Delegate: React.FC = () => {
           </article>
 
           {/*  */}
-          <div className="hidden md:block">
+          <div className="hidden sm:block">
             <div className="flex flex-col gap-3">
               <DelegatingPeriod
                 calculateRewards={calculateRewards}
@@ -77,11 +77,11 @@ const Delegate: React.FC = () => {
         </div>
 
         {/* Right Column - Guardian Selection */}
-        <article className="article-container-style flex flex-1 flex-col p-4 md:w-1/2">
+        <article className="article-container-style flex flex-1 flex-col p-4 sm:w-1/2">
           <header className="mb-4">
             <h2 className="article-container-title">Select a Guardian</h2>
           </header>
-          <div className="flex max-h-[360px] flex-col gap-2 overflow-y-scroll md:max-h-[330px]">
+          <div className="flex max-h-[360px] flex-col gap-2 overflow-y-scroll sm:max-h-[330px]">
             {guardiansList.map(guardian => (
               <GuardianButton
                 key={guardian.id}
@@ -94,7 +94,7 @@ const Delegate: React.FC = () => {
           </div>
         </article>
 
-        <div className="flex flex-col gap-2 md:hidden">
+        <div className="flex flex-col gap-2 sm:hidden">
           <DelegatingPeriod
             calculateRewards={calculateRewards}
             selectedPeriod={selectedPeriod}
