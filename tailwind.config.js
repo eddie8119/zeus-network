@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Rethink Sans', 'sans-serif'],
+        sans: ['Rethink Sans'],
       },
       fontWeight: {
         extrabold: 800,
@@ -15,9 +15,7 @@ module.exports = {
       colors: {
         // 背景色系
         background: {
-          primary: '#0F0F13', // 主背景色
-          secondary: 'rgba(26, 26, 31, 0.5)', // 次背景色，如 header 和卡片背景
-          card: '#1E1F23',
+          primary: '#0F0F13',
           panel: '#27272E',
           tab: '#202028',
           input: '#16161B',
@@ -58,11 +56,6 @@ module.exports = {
       boxShadow: {
         card: '0px 4px 24px rgba(0, 0, 0, 0.25)',
         dropdown: '0px 8px 32px rgba(0, 0, 0, 0.32)',
-      },
-      // 添加自定義圓角
-      borderRadius: {
-        card: '16px',
-        button: '8px',
       },
     },
   },
