@@ -1,21 +1,17 @@
-import Header from './components/Header';
-import Footer from './components/Footer';
+import React from 'react';
+import MainLayout from './layouts/MainLayout';
 import EpochInfo from './components/EpochInfo';
 import Delegate from './components/Delegate';
 import TotalLocked from './components/TotalLocked';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="min-h-screen bg-background-primary px-4 text-white">
-      <Header />
-      <main className="container">
-        <EpochInfo />
-        <Delegate />
-        <TotalLocked />
-      </main>
-      <Footer />
-    </div>
+    <MainLayout>
+      <EpochInfo />
+      <Delegate />
+      <TotalLocked />
+    </MainLayout>
   );
-}
+};
 
 export default App;
