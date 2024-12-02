@@ -1,8 +1,9 @@
 .gradient-primary-color{
   border-radius: 12px;
-  background: linear-gradient(310deg, #FFF4A1 2.43%, #FFEAD1 24.82%, #FFD2FF 59.61%, #D5A9FF 86.25%);
-  background: linear-gradient(310deg, color(display-p3 1 0.9569 0.6706) 2.43%, color(display-p3 1 0.9216 0.8314) 24.82%, color(display-p3 1 0.8314 0.9922) 59.61%, color(display-p3 0.8078 0.6706 1) 86.25%);
-  box-shadow: 0px 4px 4px 0px color(display-p3 1 1 1 / 0.25) inset, 0px 4px 12px 0px color(display-p3 1 1 1 / 0.50) inset;
+  background: linear-gradient(310deg, #FFEA71 2.43%, #FFBC78 24.82%, #F770EF 59.61%, #BB81FF 86.25%);
+  background: linear-gradient(310deg, color(display-p3 1 0.9216 0.5137) 2.43%, color(display-p3 1 0.749 0.5137) 24.82%, color(display-p3 0.9031 0.4685 0.912) 59.61%, color(display-p3 0.6985 0.5137 1) 86.25%);
+  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25) inset, 0px 4px 12px 0px rgba(255, 255, 255, 0.50) inset;
+  box-shadow: 0px 4px 4px 0px color(display-p3 1 1 1 / 0.25) inset, 0px 4px 12px 0px color(display-p3 1 1 1 / 0.50) inset; 
 }
 
 .zeus-node-gradient {
