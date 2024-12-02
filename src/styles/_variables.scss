@@ -3,10 +3,6 @@ $background-primary: #0A0B0D;
 $background-secondary: #18191D;
 $background-card: #1E1F23;
 
-$primary-main: #784FFE;
-$primary-light: #9C7FFF;
-$primary-dark: #6340D6;
-
 $text-primary: #FFFFFF;
 $text-secondary: #A0A3B1;
 $text-disabled: #6B7280;
@@ -15,11 +11,6 @@ $text-disabled: #6B7280;
 $border-primary: rgba(255, 255, 255, 0.1);
 $border-secondary: rgba(255, 255, 255, 0.05);
 
-// Gradients
-$gradient-purple: linear-gradient(90deg, #784FFE 0%, #9C7FFF 100%);
-$gradient-card: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%);
-$gradient-border: linear-gradient(180deg, rgba($primary-main, 0.5) 0%, rgba($primary-main, 0.1) 100%);
-$gradient-background: linear-gradient(180deg, rgba($primary-main, 0.15) 0%, rgba($primary-main, 0.03) 100%);
 
 // Spacing
 $spacing-xs: 0.25rem;  // 4px

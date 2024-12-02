@@ -32,9 +32,9 @@ a {
   text-decoration: none;
   @include transition;
   
-  &:hover {
-    color: $primary-main;
-  }
+  // &:hover {
+  //   color: red($color: #000000);
+  // }
 }
 
 button {
@@ -70,7 +70,7 @@ input {
 }
 
 .text-gradient {
-  background: $gradient-purple;
+  // background: $gradient-purple;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -98,6 +98,7 @@ input {
   @apply text-[16px] font-semibold leading-4 text-text-primary
 }
 
+// 
 .btn-active {
   @apply transition-all duration-150 ease-in-out active:opacity-50 active:translate-y-[0.5px] hover:brightness-105
 }

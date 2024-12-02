@@ -8,7 +8,7 @@ function App() {
   return (
     <div className="min-h-screen bg-background-primary p-4 text-white">
       <Header />
-      <main className="mx-auto">
+      <main className="container">
         <EpochInfo />
         <Delegate />
         <TotalLocked />
