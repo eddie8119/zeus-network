@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                 <div className="flex items-center space-x-2">
                   <img src={zeusLogo} alt="Zeus Guardian" className="h-[23px] w-[35px]" />
                   <div>
-                    <h1 className="zeus-node-style">ZEUS NODE</h1>
+                    <h1 className="zeus-node-gradient">ZEUS NODE</h1>
                     <p className="text-text-secondary text-17 font-extrabold">GUARDIAN</p>
                   </div>
                 </div>
