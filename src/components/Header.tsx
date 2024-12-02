@@ -77,27 +77,24 @@ const Header: React.FC = () => {
           </div>
 
           {/* Right section */}
-          <div className="flex items-center space-x-4">
-            {/* Epoch Switch - 隱藏在手機版 */}
-            <div className="hidden items-center space-x-2 md:flex">
-              <div className="relative">
-                <div className="h-[34px] w-[110px] rounded-full border border-white/20 bg-background-secondary">
-                  <div className="absolute left-1 top-1/2 -translate-y-1/2">
-                    <div className="h-8 w-8 rounded-full bg-primary-main"></div>
-                  </div>
-                </div>
+          <div className="flex items-center space-x-2 md:space-x-3">
+            {/* Epoch - desk */}
+            <button className="epoch-container-desk hidden h-10 items-center justify-center rounded-xl px-4 lg:flex lg:space-x-3">
+              {/* Progress Bar */}
+              <div className="progress-bar-container h-[8px] w-[40px] overflow-hidden rounded-full">
+                <div className="gradient-primary-color h-full w-4/5 rounded-full" />
               </div>
-              <span className="text-text-secondary text-sm">Epoch 20</span>
-            </div>
-
-            {/* Connect Button - 隱藏在手機版 */}
-            <button className="hidden items-center rounded-full border border-primary-main bg-primary-main/10 px-4 py-1.5 text-primary-main transition-colors hover:bg-primary-main/20 md:flex">
-              <span className="mr-2 h-2 w-2 rounded-full bg-primary-main"></span>
-              Connected
+              <span className="text-[14px] font-semibold text-text-light">Epoch 20</span>
             </button>
 
-            {/* Mobile Menu Buttons*/}
-            <div className="flex space-x-2 md:hidden">
+            {/* Connect Button - desk */}
+            <button className="connected-btn hidden h-10 items-center justify-center space-x-2 rounded-xl px-4 lg:flex">
+              <img src={tick} alt="tick" className="h-[18px] w-[18px]" />
+              <p className="text-[16px] font-medium text-text-primary">Connected</p>
+            </button>
+
+            {/* Menu Buttons - Mobile */}
+            <div className="flex space-x-2 lg:hidden">
               <button
                 onClick={() => setToggleMenu(!toggleMenu)}
                 className="menu-btn flex h-10 w-10 items-center justify-center rounded-xl"
@@ -113,25 +110,29 @@ const Header: React.FC = () => {
 
         {/* Navigation - mob */}
         {toggleMenu && (
-          <nav className="article-container-style absolute mt-4 w-full flex-col space-y-2 p-3 md:hidden">
+          <nav className="article-container-style absolute mt-4 w-full flex-col space-y-2 p-3 lg:hidden">
             {navList.map(item => (
               <a
                 href={`/${item.id}`}
                 key={item.id}
                 className={`${currentPath === item.id ? 'header-tab' : ''} header-tab-hover flex items-center rounded-button px-3 py-2 text-text-primary transition-colors`}
               >
-                <img src={item.icon} alt={`${item.label} icon`} className="mr-2 h-[18px] w-[18px]" />
+                <img
+                  src={item.icon}
+                  alt={`${item.label} icon`}
+                  className="mr-2 h-[18px] w-[18px]"
+                />
                 {item.label}
               </a>
             ))}
           </nav>
         )}
       </header>
-      
+
       {/* Backdrop */}
       {toggleMenu && (
-        <div 
-          className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-sm md:hidden"
+        <div
+          className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-sm lg:hidden"
           onClick={() => setToggleMenu(false)}
         />
       )}
