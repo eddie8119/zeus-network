@@ -1,15 +1,11 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@import 'variables';
-@import 'mixins';
-@import 'input';
-@import 'epochInfo';
-@import 'container';
-@import 'gradient';
-@import 'button';
-
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'input.scss';
+@import 'epochInfo.scss';
+@import 'container.scss';
+@import 'gradient.scss';
+@import 'button.scss';
 
 // Reset and base styles
 * {
@@ -93,7 +89,9 @@ input {
 }
 
 .article-container-title{
-  @apply text-[16px] font-semibold leading-4 text-text-primary
+  color: $text-primary;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 16px;   
 }
-
-

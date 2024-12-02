@@ -139,8 +139,8 @@ const TotalLocked: React.FC = () => {
       </header>
       <div className="outer-container-style flex w-full flex-col p-3 pt-4">
         <div className="mb-2 flex items-center gap-2">
-          <TokenItem className="bg-[#FFEB83]" lebal="BTC" />
-          <TokenItem className="bg-[#FD83FF]" lebal="$ZEUS (In 100k)" />
+          <TokenItem className="bg-primary-btc" lebal="BTC" />
+          <TokenItem className="bg-primary-zeus" lebal="$ZEUS (In 100k)" />
         </div>
         <article className="article-container-style h-[240px] w-full rounded-xl px-3 py-5">
           <Line data={chartData} options={options} />

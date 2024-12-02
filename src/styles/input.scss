@@ -1,7 +1,4 @@
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 .input-container {
   border-radius: 16px;
@@ -31,7 +28,7 @@
 
   &:hover,
   &:focus {
-    @apply text-text-primary;
+    color: $text-primary;    
   } 
   
   &:not(:placeholder-shown):not(:hover):not(:focus) {

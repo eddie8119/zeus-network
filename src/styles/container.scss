@@ -1,16 +1,13 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
-@mixin mobile {
-  @media (max-width: 767px) { @content; }
-}
+// @mixin mobile {
+//   @media (max-width: 767px) { @content; }
+// }
 
-@mixin desktop {
-  @media (min-width: 768px) { @content; }
-}
+// @mixin desktop {
+//   @media (min-width: 768px) { @content; }
+// }
 
-.article-container-style {
+@mixin article-container-style {
   border-radius: 16px;
   border: 1px solid rgba(139, 138, 160, 0.15);
   border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
@@ -18,9 +15,13 @@
   background: color(display-p3 0.1255 0.1255 0.1529);
 }
 
+.article-container-style{
+  @include article-container-style
+}
+
 .epochInfo-stats-container-style-desk {
   @include desktop {
-    @apply article-container-style 
+    @include article-container-style
   }
 }
 
@@ -52,6 +53,9 @@
 
 .outer-container-style-desk {
   @include desktop {
+    @include outer-container-style
+  }
+  @include tablet {
     @include outer-container-style 
   }
 }
@@ -80,15 +84,19 @@
 }
 
 // tab
-.header-tab {
+@mixin header-tab {
   border-radius: 12px;
   background: #2B2B33;
   background: color(display-p3 0.1686 0.1686 0.1961);
 }
 
+.header-tab{
+  @include header-tab
+}
+
 .header-tab-hover{
   &:hover{
-    @apply header-tab;
+    @include header-tab
   }
 }
 
