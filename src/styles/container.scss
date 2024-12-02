@@ -18,9 +18,15 @@
   background: color(display-p3 0.1255 0.1255 0.1529);
 }
 
+.epochInfo-stats-container-style-desk {
+  @include desktop {
+    @apply article-container-style 
+  }
+}
+
 .background-panel{
+  @apply bg-background-panel;
   border-radius: 12px;
-  background: #27272E;
   background: color(display-p3 0.1529 0.1529 0.1765);
 }
 
@@ -79,21 +85,3 @@
   }
 }
 
-// btn
-.menu-btn{
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border: 1px solid color(display-p3 1 1 1 / 0.05);
-  background: #202028;
-  background: color(display-p3 0.1255 0.1255 0.1529);
-  box-shadow: 0px 4px 12px 0px rgba(139, 138, 160, 0.15) inset;
-  box-shadow: 0px 4px 12px 0px color(display-p3 0.5451 0.5412 0.6196 / 0.15) inset;
-}
-
-.connected-btn{
-  border-radius: 12px;
-  border: 1.5px solid #FFEA71;
-  border: 1.5px solid color(display-p3 1 0.9216 0.5137);
-  background: linear-gradient(328deg, rgba(255, 234, 113, 0.10) 14.11%, rgba(255, 188, 120, 0.10) 31.28%, rgba(247, 112, 239, 0.10) 57.98%, rgba(187, 129, 255, 0.10) 78.42%), rgba(15, 15, 18, 0.20);
-  background: linear-gradient(328deg, color(display-p3 1 0.9216 0.5137 / 0.10) 14.11%, color(display-p3 1 0.749 0.5137 / 0.10) 31.28%, color(display-p3 0.9031 0.4685 0.912 / 0.10) 57.98%, color(display-p3 0.6985 0.5137 1 / 0.10) 78.42%), color(display-p3 0.0588 0.0588 0.0706 / 0.20);
-}

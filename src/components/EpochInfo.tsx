@@ -20,14 +20,16 @@ const StatsItem: React.FC<StatsItemProps> = ({
   isSecond = false,
 }) => {
   return (
-    <article className={`flex w-1/2 flex-col gap-1 ${isSecond ? 'pl-3' : ''}`}>
+    <article
+      className={`flex w-1/2 flex-col gap-1 md:flex-row md:items-center ${isSecond ? 'pl-3' : ''}`}
+    >
       <header className="flex h-[18px] items-center gap-1">
         <img src={icon} alt={label} className="h-3 w-3" />
-        <span className="text-xs font-medium text-text-dark">{label}</span>
+        <span className="font-medium leading-[18px] text-text-dark">{label}</span>
       </header>
       <div className="flex items-center gap-1">
         {showToken && <img src={zeusToken} alt="zeus token" className="h-[18px] w-[18px]" />}
-        <strong className="text-base font-semibold text-text-primary">
+        <strong className="text-[16px] font-semibold text-text-light">
           {typeof value === 'number' ? value.toLocaleString() : value}
         </strong>
       </div>
@@ -46,7 +48,8 @@ const totalDelegators = 289;
 const EpochInfo: React.FC = () => {
   return (
     <section className="mt-12 grid w-full grid-cols-1 gap-3">
-      <div className="grid grid-cols-1 gap-3 px-2">
+      {/* Epoch remaining */}
+      <div className="grid grid-cols-1 gap-3 px-2 md:hidden">
         {/* Epoch Header */}
         <div className="flex items-center justify-between">
           <header className="flex items-center space-x-1">
@@ -66,14 +69,16 @@ const EpochInfo: React.FC = () => {
       </div>
 
       {/* Stats Container */}
-      <article className="article-container-style flex px-3 py-4">
-        <StatsItem icon={lock} label="TOTAL $ZEUS LOCKED" value={totalLocked} showToken={true} />
-        <StatsItem
-          icon={userProfile}
-          label="TOTAL DELEGATORS"
-          value={totalDelegators}
-          isSecond={true}
-        />
+      <article className="outer-container-style flex px-3 py-4 md:p-1">
+        <div className="epochInfo-stats-container-style-desk flex w-full md:p-4">
+          <StatsItem icon={lock} label="TOTAL $ZEUS LOCKED" value={totalLocked} showToken={true} />
+          <StatsItem
+            icon={userProfile}
+            label="TOTAL DELEGATORS"
+            value={totalDelegators}
+            isSecond={true}
+          />
+        </div>
       </article>
     </section>
   );
