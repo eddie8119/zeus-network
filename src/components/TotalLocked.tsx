@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -12,6 +12,26 @@ import {
 } from 'chart.js';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+
+const allData = {
+  labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+  datasets: [
+    {
+      label: 'ZEUS',
+      data: [26, 27, 27, 26, 27, 26, 27, 29, 27, 26, 27, 27],
+      borderColor: '#FD83FF',
+      tension: 0.4,
+      pointRadius: 0,
+    },
+    {
+      label: 'BTC',
+      data: [27, 26, 27, 26, 27, 28, 27, 28, 26, 27, 27, 28],
+      borderColor: '#FFEB83',
+      tension: 0.4,
+      pointRadius: 0,
+    },
+  ],
+};
 
 const options = {
   responsive: true,
@@ -59,27 +79,37 @@ const options = {
   },
 };
 
-const data = {
-  labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
-  datasets: [
-    {
-      label: 'ZEUS',
-      data: [26, 27, 27, 26, 27, 26, 27, 29, 27, 26, 27, 28],
-      borderColor: '#FD83FF',
-      tension: 0.4,
-      pointRadius: 0,
-    },
-    {
-      label: 'BTC',
-      data: [27, 26, 27, 26, 27, 28, 27, 28, 26, 27, 28, 28],
-      borderColor: '#FFEB83',
-      tension: 0.4,
-      pointRadius: 0,
-    },
-  ],
-};
-
 const TotalLocked: React.FC = () => {
+  const [chartData, setChartData] = useState(allData);
+
+  useEffect(() => {
+    const handleResize = () => {
+      const isMobile = window.innerWidth < 768;
+      if (isMobile) {
+        // For mobile, only show last 4 months
+        setChartData({
+          labels: allData.labels.slice(8),
+          datasets: allData.datasets.map(dataset => ({
+            ...dataset,
+            data: dataset.data.slice(8),
+          })),
+        });
+      } else {
+        // For desktop, show all months
+        setChartData(allData);
+      }
+    };
+
+    // Initial check
+    handleResize();
+
+    // Add resize listener
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section className="mt-[48px] grid w-full grid-cols-1 md:mt-8">
       <header className="mb-3 p-2">
@@ -88,8 +118,8 @@ const TotalLocked: React.FC = () => {
         </h2>
       </header>
       <div className="outer-container-style flex w-full flex-col p-3 pt-4">
-        <article className="article-container-style flex h-[240px] flex-col gap-3 p-4">
-          <Line data={data} options={options} />
+        <article className="h-[240px] w-full">
+          <Line data={chartData} options={options} />
         </article>
       </div>
     </section>
