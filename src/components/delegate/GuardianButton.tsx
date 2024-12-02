@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from '../common/ProgressBar';
 
 interface GuardianButtonProps {
   key: number;
@@ -8,6 +9,8 @@ interface GuardianButtonProps {
   onClick: () => void;
 }
 
+const guardianAmountTotal = 40000000;
+
 const GuardianButton: React.FC<GuardianButtonProps> = ({
   key,
   name,
@@ -15,6 +18,8 @@ const GuardianButton: React.FC<GuardianButtonProps> = ({
   isSelected,
   onClick,
 }) => {
+  const progressBarNumber = (amount / guardianAmountTotal) * 100;
+
   return (
     <button
       key={key}
@@ -24,8 +29,15 @@ const GuardianButton: React.FC<GuardianButtonProps> = ({
       }`}
     >
       <p className="text-[16px] font-semibold leading-6">{name}</p>
-      <p className="text-[14px] font-medium">
-        $ZEUS {amount.toLocaleString()} / {amount.toLocaleString()}
+      <ProgressBar
+        progress={progressBarNumber}
+        width="45px"
+        height="10px"
+        active={isSelected}
+        className="md:hidden"
+      />
+      <p className="hidden text-[14px] font-medium md:block">
+        $ZEUS {amount.toLocaleString()} / {guardianAmountTotal.toLocaleString()}
       </p>
     </button>
   );
