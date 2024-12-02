@@ -63,6 +63,9 @@ const options = {
           size: 11,
         },
       },
+      border: {
+        display: false,
+      },
     },
     y: {
       grid: {
@@ -74,6 +77,9 @@ const options = {
         font: {
           size: 11,
         },
+      },
+      border: {
+        display: false,
       },
     },
   },
@@ -118,7 +124,7 @@ const TotalLocked: React.FC = () => {
         </h2>
       </header>
       <div className="outer-container-style flex w-full flex-col p-3 pt-4">
-        <article className="h-[240px] w-full">
+        <article className="article-container-style h-[240px] w-full rounded-xl px-3 py-5">
           <Line data={chartData} options={options} />
         </article>
       </div>
