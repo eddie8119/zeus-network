@@ -45,7 +45,7 @@ const Header: React.FC = () => {
   return (
     <>
       <header className="sticky top-0 z-[999] bg-background-primary pt-3">
-        <div className="article-container-style h-14 p-2 pl-4">
+        <div className="article-container-style h-14 p-2 pl-4 lg:h-16 lg:p-3 lg:pl-5">
           <div className="header-footer-container flex items-center justify-between">
             {/* Left section  */}
             <div className="flex items-center space-x-8">
@@ -96,11 +96,11 @@ const Header: React.FC = () => {
               <div className="flex space-x-2 lg:hidden">
                 <button
                   onClick={() => setToggleMenu(!toggleMenu)}
-                  className="menu-btn flex h-10 w-10 items-center justify-center rounded-xl"
+                  className="menu-btn btn-active flex h-10 w-10 items-center justify-center rounded-xl"
                 >
                   <img src={menu} alt="Menu" className="h-[18px] w-[18px]" />
                 </button>
-                <button className="connected-btn flex h-10 w-10 items-center justify-center rounded-xl">
+                <button className="btn-active connected-btn flex h-10 w-10 items-center justify-center rounded-xl">
                   <img src={tick} alt="tick" className="h-[18px] w-[18px]" />
                 </button>
               </div>
