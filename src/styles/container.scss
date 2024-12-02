@@ -1,12 +1,4 @@
 
-// @mixin mobile {
-//   @media (max-width: 767px) { @content; }
-// }
-
-// @mixin desktop {
-//   @media (min-width: 768px) { @content; }
-// }
-
 @mixin article-container-style {
   border-radius: 16px;
   border: 1px solid rgba(139, 138, 160, 0.15);
@@ -20,7 +12,7 @@
 }
 
 .epochInfo-stats-container-style-desk {
-  @include desktop {
+  @include sm {
     @include article-container-style
   }
 }
@@ -52,11 +44,8 @@
 }
 
 .outer-container-style-desk {
-  @include desktop {
+  @include sm {
     @include outer-container-style
-  }
-  @include tablet {
-    @include outer-container-style 
   }
 }
 
