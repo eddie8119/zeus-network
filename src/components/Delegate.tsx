@@ -55,7 +55,7 @@ const Delegate: React.FC = () => {
                 </label>
                 <div className="flex text-[14px] text-text-medium">
                   <p className="font-semibold">Balance</p>
-                  <img src={zeusToken} alt="ZEUS token" className="h-[18px] w-[18px]" />
+                  <img src={zeusToken} alt="ZEUS token" className="ml-2 mr-1 h-[18px] w-[18px]" />
                   <p className="font-medium">{balance.toLocaleString()}</p>
                 </div>
               </div>
@@ -72,7 +72,7 @@ const Delegate: React.FC = () => {
                 setSelectedPeriod={setSelectedPeriod}
                 setApy={setApy}
               />
-              <DelegateButton disabled={true} onClick={() => {}} />
+              <DelegateButton disabled={false} onClick={() => {}} />
             </div>
           </div>
         </div>
@@ -102,7 +102,7 @@ const Delegate: React.FC = () => {
             setSelectedPeriod={setSelectedPeriod}
             setApy={setApy}
           />
-          <DelegateButton disabled={true} onClick={() => {}} />
+          <DelegateButton disabled={false} onClick={() => {}} />
         </div>
       </div>
     </section>

@@ -19,7 +19,7 @@ const DelegatingPeriodButton: React.FC<DelegatingPeriodButtonProps> = ({
     <button
       key={key}
       onClick={onClick}
-      className={`flex flex-col gap-2 rounded-xl px-4 py-3 text-[14px] leading-[18px] ${
+      className={`btn-active flex flex-col gap-2 rounded-xl px-4 py-3 text-[14px] leading-[18px] ${
         isSelected
           ? 'guardian-container-active-style text-text-primary'
           : 'guardian-container-style text-text-medium'

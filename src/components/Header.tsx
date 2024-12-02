@@ -79,7 +79,7 @@ const Header: React.FC = () => {
           {/* Right section */}
           <div className="flex items-center space-x-2 md:space-x-3">
             {/* Epoch - desk */}
-            <button className="epoch-container-desk hidden h-10 items-center justify-center rounded-xl px-4 lg:flex lg:space-x-3">
+            <button className="btn-active epoch-container-desk hidden h-10 items-center justify-center rounded-xl px-4 lg:flex lg:space-x-3">
               {/* Progress Bar */}
               <div className="progress-bar-container h-[8px] w-[40px] overflow-hidden rounded-full">
                 <div className="gradient-primary-color h-full w-4/5 rounded-full" />
@@ -88,7 +88,7 @@ const Header: React.FC = () => {
             </button>
 
             {/* Connect Button - desk */}
-            <button className="connected-btn hidden h-10 items-center justify-center space-x-2 rounded-xl px-4 lg:flex">
+            <button className="btn-active connected-btn hidden h-10 items-center justify-center space-x-2 rounded-xl px-4 lg:flex">
               <img src={tick} alt="tick" className="h-[18px] w-[18px]" />
               <p className="text-[16px] font-medium text-text-primary">Connected</p>
             </button>
