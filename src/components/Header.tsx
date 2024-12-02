@@ -41,8 +41,8 @@ const Header: React.FC = () => {
   const currentPath = window.location.pathname.slice(1);
 
   return (
-    <header className="article-container-style sticky top-3 z-[999] md:top-6">
-      <div className="flex h-14 items-center justify-between p-2 pl-4">
+    <header className="sticky top-0 z-[999] bg-background-primary pt-3">
+      <div className="article-container-style flex h-14 items-center justify-between p-2 pl-4">
         {/* Left section - Logo and Navigation */}
         <div className="flex items-center space-x-8">
           <a href="/">

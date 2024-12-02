@@ -6,7 +6,7 @@ import TotalLocked from './components/TotalLocked';
 
 function App() {
   return (
-    <div className="min-h-screen bg-background-primary p-4 text-white">
+    <div className="min-h-screen bg-background-primary px-4 text-white">
       <Header />
       <main className="container">
         <EpochInfo />
