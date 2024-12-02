@@ -8,7 +8,7 @@ interface MainLayoutProps {
 
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
-    <div className="min-h-screen px-3 text-white">
+    <div className="min-h-screen px-3 text-white lg:px-8">
       <Header />
       <main className="container">{children}</main>
       <Footer />

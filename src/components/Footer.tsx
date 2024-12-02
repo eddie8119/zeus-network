@@ -30,7 +30,7 @@ const linksList: LinkItem[] = [
 const Footer: React.FC = () => {
   return (
     <footer className="mx-auto mt-[49px] w-full py-8 sm:mt-[84px] sm:p-8 sm:pt-9">
-      <div className="flex flex-col space-y-8 sm:flex-row sm:justify-between sm:space-y-0">
+      <div className="header-footer-container flex flex-col space-y-8 sm:flex-row sm:justify-between sm:space-y-0">
         {/* Left Section  */}
         <div className="flex flex-col items-center space-y-8 sm:items-start sm:space-y-6">
           <div className="flex items-center text-[16px] text-base leading-[24px] text-text-light">
