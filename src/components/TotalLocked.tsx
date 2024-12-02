@@ -11,58 +11,22 @@ import React from 'react';
 //   Legend,
 // } from 'chart.js';
 
-// ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
-
-const months = ['SEP', 'OCT', 'NOV', 'DEC'];
-
-const data = {
-  labels: months,
-  datasets: [
-    {
-      label: 'BTC',
-      data: [25, 28, 25, 25],
-      borderColor: '#FFB800',
-      backgroundColor: '#FFB800',
-      tension: 0.4,
-      pointRadius: 0,
-    },
-    {
-      label: '$ZEUS',
-      data: [25, 29, 26, 25],
-      borderColor: '#FF00FF',
-      backgroundColor: '#FF00FF',
-      tension: 0.4,
-      pointRadius: 0,
-    },
-  ],
-};
+// ChartJS.register(
+//   CategoryScale,
+//   LinearScale,
+//   PointElement,
+//   LineElement,
+//   Title,
+//   Tooltip,
+//   Legend
+// );
 
 const options = {
   responsive: true,
   maintainAspectRatio: false,
   plugins: {
     legend: {
-      position: 'top' as const,
-      align: 'start' as const,
-      labels: {
-        usePointStyle: true,
-        boxWidth: 6,
-        padding: 20,
-        color: '#A3A3A3',
-      },
-    },
-    title: {
-      display: true,
-      text: 'Total $ZEUS, $BTC locked',
-      align: 'start' as const,
-      color: '#FFFFFF',
-      font: {
-        size: 14,
-        weight: '500',
-      },
-      padding: {
-        bottom: 30,
-      },
+      display: false,
     },
   },
   scales: {
@@ -71,25 +35,60 @@ const options = {
         display: false,
       },
       ticks: {
-        color: '#A3A3A3',
+        color: '#9CA0B0',
+        font: {
+          size: 11,
+        },
       },
     },
     y: {
       grid: {
-        color: '#27272A',
+        color: '#2B2B33',
       },
       ticks: {
-        color: '#A3A3A3',
+        color: '#9CA0B0',
+        font: {
+          size: 11,
+        },
       },
     },
   },
 };
 
+const data = {
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+  datasets: [
+    {
+      label: 'ZEUS',
+      data: [12, 19, 3, 5, 2, 3],
+      borderColor: '#7B61FF',
+      tension: 0.4,
+      pointRadius: 0,
+    },
+    {
+      label: 'BTC',
+      data: [8, 12, 6, 9, 4, 7],
+      borderColor: '#F7931A',
+      tension: 0.4,
+      pointRadius: 0,
+    },
+  ],
+};
+
 const TotalLocked: React.FC = () => {
   return (
-    <div className="article-container-style flex h-[240px] w-full flex-col p-4">
-      {/* <Line data={data} options={options} /> */}
-    </div>
+    <section className="mt-[48px] grid w-full grid-cols-1 md:mt-8">
+      <header className="mb-3 p-2">
+        <h2 className="text-[18px] font-medium leading-6 text-text-primary">
+          Total $ZEUS , $BTC locked
+        </h2>
+      </header>
+      <div className="outer-container-style flex w-full flex-col p-3 pt-4">
+        <article className="article-container-style flex h-[240px] flex-col gap-3 p-4">
+          {/* <Line data={data} options={options} /> */}
+        </article>
+      </div>
+    </section>
   );
 };
 
