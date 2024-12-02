@@ -3,6 +3,7 @@ import zeusToken from '../assets/zeus-token.svg';
 import chevronRight from '../assets/epochInfo/chevron-right.svg';
 import lock from '../assets/epochInfo/lock.svg';
 import userProfile from '../assets/epochInfo/user-profile.svg';
+import ProgressBar from './common/ProgressBar';
 
 interface StatsItemProps {
   icon: string;
@@ -49,7 +50,7 @@ const EpochInfo: React.FC = () => {
   return (
     <section className="mt-12 grid w-full grid-cols-1 gap-3">
       {/* Epoch remaining */}
-      <div className="grid grid-cols-1 gap-3 px-2 sm:hidden">
+      <div className="grid grid-cols-1 gap-3 px-2 lg:hidden">
         {/* Epoch Header */}
         <div className="flex items-center justify-between">
           <header className="flex items-center space-x-1">
@@ -61,11 +62,7 @@ const EpochInfo: React.FC = () => {
             remaining
           </p>
         </div>
-
-        {/* Progress Bar */}
-        <div className="progress-bar-container h-2 w-full overflow-hidden rounded-full">
-          <div className="gradient-primary-color h-full w-4/5 rounded-full" />
-        </div>
+        <ProgressBar progress={80} height="8px" className="w-full" />
       </div>
 
       {/* Stats Container */}
