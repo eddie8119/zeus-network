@@ -24,9 +24,8 @@ module.exports = {
         },
         // 主題色系
         primary: {
-          main: '#784FFE', // 主題紫色
-          light: '#9C7FFF', // 較亮的紫色
-          dark: '#6340D6', // 較暗的紫色
+          btc: '#FFEB83',
+          zeus: '#FD83FF',
         },
         // 功能色系
         status: {

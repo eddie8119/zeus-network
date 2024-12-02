@@ -13,6 +13,20 @@ import {
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
 
+interface TokenItemProps {
+  className: string;
+  lebal: string;
+}
+
+const TokenItem: React.FC<TokenItemProps> = ({ className, lebal }) => {
+  return (
+    <div className="flex items-center gap-1">
+      <div className={`${className} h-[10px] w-[10px] rounded-full`}></div>
+      <span className="text-[12px] font-normal text-[#9CA0B0]">{lebal}</span>
+    </div>
+  );
+};
+
 const allData = {
   labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
   datasets: [
@@ -124,6 +138,10 @@ const TotalLocked: React.FC = () => {
         </h2>
       </header>
       <div className="outer-container-style flex w-full flex-col p-3 pt-4">
+        <div className="mb-2 flex items-center gap-2">
+          <TokenItem className="bg-primary-btc" lebal="BTC" />
+          <TokenItem className="bg-primary-zeus" lebal="$ZEUS (In 100k)" />
+        </div>
         <article className="article-container-style h-[240px] w-full rounded-xl px-3 py-5">
           <Line data={chartData} options={options} />
         </article>
