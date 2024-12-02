@@ -58,3 +58,15 @@
   background: linear-gradient(180deg, rgba(255, 121, 255, 0.30) -11.76%, rgba(227, 91, 223, 0.30) 48.65%, rgba(148, 98, 224, 0.30) 97.06%);
   background: linear-gradient(180deg, color(display-p3 0.9922 0.5098 1 / 0.00) -11.76%, color(display-p3 0.8275 0.3922 0.851 / 0.30) 48.65%, color(display-p3 0.5529 0.3922 0.851 / 0.30) 97.06%);
 }
+
+.header-tab {
+  border-radius: 12px;
+  background: #2B2B33;
+  background: color(display-p3 0.1686 0.1686 0.1961);
+}
+
+.header-tab-hover{
+  &:hover{
+    @apply header-tab;
+  }
+}

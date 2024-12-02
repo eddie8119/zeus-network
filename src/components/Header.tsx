@@ -1,14 +1,15 @@
 import React from 'react';
-import { FaRegFileAlt } from 'react-icons/fa';
-import { BiShieldQuarter, BiTimeFive, BiDonateHeart } from 'react-icons/bi';
-import { IconType } from 'react-icons';
-import zeusLogo from '../assets/zeus-logo.png';
+import zeusLogo from '../assets/zeus-logo.svg';
 import check from '../assets/header/check.svg';
 import menu from '../assets/header/menu.svg';
+import DelegateIcon from '../assets/header/Delegate.svg';
+import DelegationsIcon from '../assets/header/Delegations.svg';
+import GuardiansIcon from '../assets/header/Guardians.svg';
+import DocIcon from '../assets/header/Doc.svg';
 
 interface NavItem {
   id: string;
-  icon: IconType;
+  icon: string;
   label: string;
   iconSize?: string;
 }
@@ -16,54 +17,59 @@ interface NavItem {
 const navList: NavItem[] = [
   {
     id: 'delegate',
-    icon: BiDonateHeart,
+    icon: DelegateIcon,
     label: 'Delegate',
-    iconSize: 'text-xl',
   },
   {
     id: 'delegations',
-    icon: BiTimeFive,
+    icon: DelegationsIcon,
     label: 'My Delegations',
-    iconSize: 'text-xl',
   },
   {
     id: 'guardians',
-    icon: BiShieldQuarter,
+    icon: GuardiansIcon,
     label: 'Guardians',
-    iconSize: 'text-xl',
   },
   {
     id: 'doc',
-    icon: FaRegFileAlt,
+    icon: DocIcon,
     label: 'Doc',
-    iconSize: 'text-lg',
   },
 ];
 
 const Header: React.FC = () => {
+  const currentPath = window.location.pathname.slice(1);
+
   return (
-    <header className="article-container-style sticky top-0">
+    <header className="article-container-style sticky top-3 z-[999] md:top-6">
       <div className="flex h-14 items-center justify-between p-2 pl-4">
         {/* Left section - Logo and Navigation */}
         <div className="flex items-center space-x-8">
-          <div className="flex items-center space-x-2">
-            <img src={zeusLogo} alt="Zeus Guardian" className="h-[23px] w-[35px]" />
-            <div>
-              <h1 className="bg-clip-text text-[11px] font-medium text-gradient-text">ZEUS NODE</h1>
-              <p className="text-17 font-extrabold text-text-secondary">GUARDIAN</p>
+          <a href="/">
+            <div className="flex items-center space-x-2">
+              <img src={zeusLogo} alt="Zeus Guardian" className="h-[23px] w-[35px]" />
+              <div>
+                <h1 className="zeus-node-style">ZEUS NODE</h1>
+                <p className="text-text-secondary text-17 font-extrabold">GUARDIAN</p>
+              </div>
             </div>
-          </div>
+          </a>
 
           {/* Navigation - 隱藏在手機版 */}
-          <nav className="hidden space-x-2 md:flex">
+          <nav className="flex flex-col space-x-3 md:flex-row">
             {navList.map(item => (
-              <button
+              <a
+                href={`/${item.id}`}
                 key={item.id}
-                className="flex items-center rounded-button px-4 py-2 text-text-primary transition-colors hover:bg-white/10"
+                className={`${currentPath === item.id ? 'header-tab' : ''} header-tab-hover flex items-center rounded-button px-3 py-2 text-text-primary transition-colors`}
               >
-                <item.icon className={`mr-2 ${item.iconSize}`} />
+                <img
+                  src={item.icon}
+                  alt={`${item.label} icon`}
+                  className="mr-2 h-[18px] w-[18px]"
+                />
                 {item.label}
-              </button>
+              </a>
             ))}
           </nav>
         </div>
@@ -79,7 +85,7 @@ const Header: React.FC = () => {
                 </div>
               </div>
             </div>
-            <span className="text-sm text-text-secondary">Epoch 20</span>
+            <span className="text-text-secondary text-sm">Epoch 20</span>
           </div>
 
           {/* Connect Button - 隱藏在手機版 */}
@@ -93,7 +99,7 @@ const Header: React.FC = () => {
             <button className="article-container-style flex h-10 w-10 items-center justify-center rounded-xl">
               <img src={menu} alt="Menu" className="h-[18px] w-[18px]" />
             </button>
-            <button className="article-container-style border-gradient-main flex h-10 w-10 items-center justify-center rounded-xl">
+            <button className="article-container-style flex h-10 w-10 items-center justify-center rounded-xl border-gradient-main">
               <img src={check} alt="Check" className="h-[11px] w-[13px]" />
             </button>
           </div>
