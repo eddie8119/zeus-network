@@ -23,18 +23,15 @@
   background: color(display-p3 0.1529 0.1529 0.1765);
 }
 
-.outer-container-style {
+@mixin outer-container-style {
   border-radius: 20px;
   border: 1px solid rgba(139, 138, 160, 0.15);
   border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
   backdrop-filter: blur(10px);  
 }
 
-@mixin outer-container-style {
-  border-radius: 20px;
-  border: 1px solid rgba(139, 138, 160, 0.15);
-  border: 1px solid color(display-p3 0.5451 0.5412 0.6196 / 0.15);
-  backdrop-filter: blur(10px);  
+.outer-container-style {
+  @include outer-container-style
 }
 
 .outer-container-style-mobile {
