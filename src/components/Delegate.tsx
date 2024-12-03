@@ -40,10 +40,10 @@ const Delegate: React.FC = () => {
         <h2 className="text-[18px] font-medium leading-6 text-text-primary">Delegate</h2>
       </header>
       <div className="outer-container-style-mobile flex w-full flex-col gap-2 p-2 sm:flex-row sm:gap-3 sm:p-0">
-        {/* Left Column - Deposit and Period Selection */}
+        {/* left column - deposit and period selection */}
         <div className="flex flex-col gap-4 sm:w-1/2">
           <article className="article-container-style flex flex-col gap-3 p-4">
-            {/* Deposit Input */}
+            {/* deposit input */}
             <form>
               <div className="mb-2 flex h-[18px] items-center justify-between">
                 <label
@@ -62,7 +62,7 @@ const Delegate: React.FC = () => {
             </form>
           </article>
 
-          {/*  */}
+          {/* desktop period selection */}
           <div className="hidden sm:block">
             <div className="flex flex-col gap-3">
               <DelegatingPeriod
@@ -76,7 +76,7 @@ const Delegate: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Column - Guardian Selection */}
+        {/* right column - guardian selection */}
         <article className="article-container-style flex flex-1 flex-col p-4 sm:w-1/2">
           <header className="mb-4">
             <h2 className="article-container-title">Select a Guardian</h2>
@@ -94,6 +94,7 @@ const Delegate: React.FC = () => {
           </div>
         </article>
 
+        {/* mobile period selection */}
         <div className="flex flex-col gap-2 sm:hidden">
           <DelegatingPeriod
             calculateRewards={calculateRewards}

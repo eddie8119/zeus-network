@@ -49,9 +49,9 @@ const totalDelegators = 289;
 const EpochInfo: React.FC = () => {
   return (
     <section className="mt-12 grid w-full grid-cols-1 gap-3">
-      {/* Epoch remaining */}
+      {/* epoch remaining */}
       <div className="grid grid-cols-1 gap-3 px-2 lg:hidden">
-        {/* Epoch Header */}
+        {/* epoch header */}
         <header className="flex items-center justify-between">
           <div className="flex items-center space-x-1">
             <h2 className="text-base font-bold text-text-primary">Epoch 20</h2>
@@ -65,7 +65,7 @@ const EpochInfo: React.FC = () => {
         <ProgressBar progress={80} height="8px" className="w-full" />
       </div>
 
-      {/* Stats Container */}
+      {/* stats container */}
       <article className="outer-container-style flex px-3 py-4 sm:p-1">
         <div className="epochInfo-stats-container-style-desk relative flex w-full before:absolute before:left-1/2 before:top-1/2 before:h-full before:w-[1px] before:-translate-y-1/2 before:bg-text-dark before:opacity-15 before:content-[''] sm:p-4 sm:before:hidden">
           <StatsItem icon={lock} label="TOTAL $ZEUS LOCKED" value={totalLocked} showToken={true} />

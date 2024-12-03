@@ -31,14 +31,14 @@ const Footer: React.FC = () => {
   return (
     <footer className="mx-auto mt-[49px] w-full py-8 sm:mt-[84px] sm:p-8 sm:pt-9">
       <div className="header-footer-container flex flex-col space-y-8 sm:flex-row sm:justify-between sm:space-y-0">
-        {/* Left Section  */}
+        {/* left section  */}
         <div className="flex flex-col items-center space-y-8 sm:items-start sm:space-y-6">
           <div className="flex items-center text-[16px] text-base leading-[24px] text-text-light">
             <span>Powered by</span>
             <img src={footerZeusLogo} alt="Zeus Network" className="ml-3 mr-2 h-[10px] w-4" />
             <span>ZEUS Network</span>
           </div>
-          {/* Social Links */}
+          {/* social links */}
           <div className="flex space-x-4">
             <a href="https://twitter.com/zeus" target="_blank" rel="noopener noreferrer">
               <img
@@ -57,9 +57,9 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Right Section  */}
+        {/* right section  */}
         <div className="flex flex-col items-center space-y-2 text-sm sm:items-end sm:space-y-6">
-          {/* Links */}
+          {/* links */}
           <div className="flex space-x-5">
             {linksList.map(item => (
               <a
@@ -71,7 +71,7 @@ const Footer: React.FC = () => {
               </a>
             ))}
           </div>
-          {/* Copyright */}
+          {/* copyright */}
           <span className="text-[14px] font-medium leading-[20px] text-text-dark">
             2024, ZEUS Network All rights reserved.
           </span>

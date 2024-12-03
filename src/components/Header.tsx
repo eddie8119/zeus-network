@@ -47,7 +47,7 @@ const Header: React.FC = () => {
       <header className="sticky top-0 z-[999] bg-background-primary pt-3">
         <div className="article-container-style h-14 p-2 pl-4 lg:h-16 lg:p-3 lg:pl-5">
           <div className="header-footer-container flex items-center justify-between">
-            {/* Left section  */}
+            {/* left section  */}
             <div className="flex items-center space-x-8">
               <a href="/">
                 <div className="flex items-center space-x-2">
@@ -59,7 +59,7 @@ const Header: React.FC = () => {
                 </div>
               </a>
 
-              {/* Navigation - desk */}
+              {/* navigation - desk */}
               <nav className="hidden space-x-3 lg:flex lg:flex-row">
                 {navList.map(item => (
                   <a
@@ -78,21 +78,21 @@ const Header: React.FC = () => {
               </nav>
             </div>
 
-            {/* Right section */}
+            {/* right section */}
             <div className="flex items-center space-x-2 sm:space-x-3">
-              {/* Epoch - desk */}
+              {/* epoch - desk */}
               <button className="btn-active epoch-container-desk hidden h-10 items-center justify-center rounded-xl px-4 lg:flex lg:space-x-3">
                 <ProgressBar progress={80} width="40px" />
                 <span className="text-[14px] font-semibold text-text-light">Epoch 20</span>
               </button>
 
-              {/* Connect Button - desk */}
+              {/* connect button - desk */}
               <button className="btn-active connected-btn hidden h-10 items-center justify-center space-x-2 rounded-xl px-4 lg:flex">
                 <img src={tick} alt="tick" className="h-[18px] w-[18px]" />
                 <p className="text-[16px] font-medium text-text-primary">Connected</p>
               </button>
 
-              {/* Menu Buttons - Mobile */}
+              {/* menu buttons - mobile */}
               <div className="flex space-x-2 lg:hidden">
                 <button
                   onClick={() => setToggleMenu(!toggleMenu)}
@@ -108,7 +108,7 @@ const Header: React.FC = () => {
           </div>
         </div>
 
-        {/* Navigation - mob */}
+        {/* navigation - mob */}
         {toggleMenu && (
           <nav className="article-container-style absolute mt-4 w-full flex-col space-y-2 p-3 lg:hidden">
             {navList.map(item => (
@@ -129,7 +129,7 @@ const Header: React.FC = () => {
         )}
       </header>
 
-      {/* Backdrop */}
+      {/* backdrop */}
       {toggleMenu && (
         <div
           className="fixed inset-0 z-[998] bg-black/50 backdrop-blur-sm lg:hidden"
