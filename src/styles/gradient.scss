@@ -25,3 +25,18 @@
   -webkit-text-fill-color: transparent; //文字漸層效果在所有瀏覽器中正常顯示
   background-clip: text; 
 }
+
+.view-more-gradient {   
+  color: #F1F0F3;
+  color: color(display-p3 0.9451 0.9412 0.9529);
+  background: linear-gradient(96deg, 
+    #BFA36B 0%,
+    #AD8960 16%,
+    #9C5F91 34%,
+    #755A94 52%,
+    #9A999B 97%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
