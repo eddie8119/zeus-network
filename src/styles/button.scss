@@ -4,7 +4,16 @@
 
 // transition
 .btn-active {
-  @apply transition-all duration-150 ease-in-out active:opacity-50 active:translate-y-[0.5px] hover:brightness-110
+  transition: all 150ms ease-in-out;
+  
+  &:active {
+    opacity: 0.5;
+    transform: translateY(0.5px);
+  }
+  
+  &:hover {
+    filter: brightness(1.1);
+  }
 }
 
 // btn
