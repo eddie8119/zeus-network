@@ -1,3 +1,9 @@
+@mixin text-fill {
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .gradient-primary-color{
   border-radius: 12px;
   background: linear-gradient(310deg, #FFEA71 2.43%, #FFBC78 24.82%, #F770EF 59.61%, #BB81FF 86.25%);
@@ -21,9 +27,7 @@
     #DEB8E0 66%,
     #C5B8E8 100%
   ); 
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent; //文字漸層效果在所有瀏覽器中正常顯示
-  background-clip: text; 
+  @include text-fill;
 }
 
 .view-more-gradient {   
@@ -36,7 +40,5 @@
     #755A94 52%,
     #9A999B 97%
   );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  @include text-fill;
 }
