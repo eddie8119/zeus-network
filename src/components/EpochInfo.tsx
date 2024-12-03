@@ -52,16 +52,16 @@ const EpochInfo: React.FC = () => {
       {/* Epoch remaining */}
       <div className="grid grid-cols-1 gap-3 px-2 lg:hidden">
         {/* Epoch Header */}
-        <div className="flex items-center justify-between">
-          <header className="flex items-center space-x-1">
+        <header className="flex items-center justify-between">
+          <div className="flex items-center space-x-1">
             <h2 className="text-base font-bold text-text-primary">Epoch 20</h2>
             <img src={chevronRight} alt="chevron right" className="h-[18px] w-[18px]" />
-          </header>
+          </div>
           <p className="text-sm font-normal text-text-light">
             {remainingTime.days} days {remainingTime.hours} hours {remainingTime.mins} mins
             remaining
           </p>
-        </div>
+        </header>
         <ProgressBar progress={80} height="8px" className="w-full" />
       </div>
 
