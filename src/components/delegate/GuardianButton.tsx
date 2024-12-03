@@ -24,8 +24,10 @@ const GuardianButton: React.FC<GuardianButtonProps> = ({
     <button
       key={key}
       onClick={onClick}
-      className={`btn-active flex items-center justify-between rounded-xl px-4 py-3 text-text-medium ${
-        isSelected ? 'guardian-container-active-style' : 'guardian-container-style'
+      className={`btn-active flex items-center justify-between rounded-xl px-4 py-3 ${
+        isSelected
+          ? 'guardian-container-active-style text-text-primary'
+          : 'guardian-container-style text-text-medium'
       }`}
     >
       <p className="text-[16px] font-semibold leading-6">{name}</p>
