@@ -26,7 +26,7 @@ const FooterLinks: React.FC = () => {
         <a
           key={item.id}
           href={item.link}
-          className="text-[16px] font-medium leading-[24px] text-text-light hover:text-text-primary"
+          className="text-[14px] font-medium leading-[20px] text-text-light hover:text-text-primary sm:text-[16px] sm:leading-[24px]"
         >
           {item.label}
         </a>
