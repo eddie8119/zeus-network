@@ -39,23 +39,6 @@ module.exports = {
           dark: '#8B8A9E',
           disabled: '#6B7280',
         },
-        // 邊框和分隔線
-        border: {
-          primary: 'rgba(136, 168, 158, 0.15)', // 主要邊框
-          secondary: 'rgba(255, 255, 255, 0.05)', // 次要邊框
-        },
-        // 漸層色系
-        gradient: {
-          purple: 'linear-gradient(90deg, #784FFE 0%, #9C7FFF 100%)',
-          card: 'linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0) 100%)',
-          text: 'linear-gradient(90deg, #FFEB83 0%, #FFBF83 27%, #E677E9 68%, #B283FF 100%)',
-          main: 'linear-gradient(90deg, #FFEB83 0%, #FFBF83 33%, #E677E9 66%, #B283FF 100%)',
-        },
-      },
-      // 添加自定義陰影
-      boxShadow: {
-        card: '0px 4px 24px rgba(0, 0, 0, 0.25)',
-        dropdown: '0px 8px 32px rgba(0, 0, 0, 0.32)',
       },
     },
   },
