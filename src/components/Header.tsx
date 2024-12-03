@@ -42,7 +42,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-[999] bg-background-primary pt-3">
+      <header className="sticky top-0 z-[999] bg-background-primary pt-3 sm:pt-6">
         <div className="article-container-style h-14 p-2 pl-4 lg:h-16 lg:p-3 lg:pl-5">
           <div className="header-footer-container flex items-center justify-between">
             {/* left section  */}
