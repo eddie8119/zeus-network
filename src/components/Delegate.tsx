@@ -81,7 +81,7 @@ const Delegate: React.FC = () => {
           <header className="mb-4">
             <h2 className="article-container-title">Select a Guardian</h2>
           </header>
-          <div className="flex max-h-[360px] flex-col gap-2 overflow-y-scroll sm:max-h-[330px]">
+          <article className="flex max-h-[360px] w-full flex-col gap-2 overflow-y-scroll sm:max-h-[340px]">
             {guardiansList.map(guardian => (
               <GuardianPanel
                 key={guardian.id}
@@ -91,7 +91,7 @@ const Delegate: React.FC = () => {
                 onClick={() => setSelectedGuardian(guardian.id)}
               />
             ))}
-          </div>
+          </article>
         </article>
 
         {/* mobile period selection */}
