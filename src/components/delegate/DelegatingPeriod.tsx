@@ -37,7 +37,7 @@ const DelegatingPeriod: React.FC<DelegatingPeriodProps> = ({
     <article className="article-container-style flex flex-col p-4">
       <header className="mb-5 flex items-center justify-between">
         <div className="flex space-x-2">
-          <h2 className="article-container-title">Select Delegating Period</h2>
+          <h2 className="article-container-title whitespace-nowrap">Select Delegating Period</h2>
           <button>
             <img src={info} alt="info" className="h-[18px] w-[18px]" />
           </button>

@@ -13,7 +13,7 @@ const DesktopNav: React.FC<DesktopNavProps> = ({ navList, currentPath }) => {
         <a
           href={`/${item.id}`}
           key={item.id}
-          className={`${currentPath === item.id ? 'header-tab' : ''} header-tab-hover rounded-button flex items-center px-3 py-2 text-text-primary transition-colors`}
+          className={`${currentPath === item.id ? 'header-tab' : ''} header-tab-hover rounded-button flex items-center whitespace-nowrap px-3 py-2 text-text-primary transition-colors`}
         >
           <img src={item.icon} alt={`${item.label} icon`} className="mr-2 h-[18px] w-[18px]" />
           {item.label}
