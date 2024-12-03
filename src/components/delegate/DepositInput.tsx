@@ -3,7 +3,7 @@ import zeusToken from '../../assets/zeus-token.svg';
 import { useNumberFormat } from '../../hooks/useNumberFormat';
 
 interface DepositInputProps {
-  amount: number;
+  amount: number | null;
   setAmount: (value: number) => void;
   balance: number;
 }
@@ -39,7 +39,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
           id="deposit"
           type="text"
           inputMode="numeric"
-          value={formatNumber(amount)}
+          value={amount !== null ? formatNumber(amount) : ''}
           onChange={handleChange}
           className="input-inner-text w-full bg-transparent text-right text-[16px] font-semibold leading-[22px] outline-none transition-colors group-hover:text-text-primary"
           aria-label="Deposit amount"
