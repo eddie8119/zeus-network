@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import zeusToken from '../assets/zeus-token.svg';
-import GuardianButton from './delegate/GuardianButton';
+import GuardianPanel from './delegate/GuardianPanel';
 import DelegatingPeriod from './delegate/DelegatingPeriod';
 import DelegateButton from './delegate/DelegateButton';
 import DepositInput from './delegate/DepositInput';
@@ -83,7 +83,7 @@ const Delegate: React.FC = () => {
           </header>
           <div className="flex max-h-[360px] flex-col gap-2 overflow-y-scroll sm:max-h-[330px]">
             {guardiansList.map(guardian => (
-              <GuardianButton
+              <GuardianPanel
                 key={guardian.id}
                 name={guardian.name}
                 amount={guardian.amount}
