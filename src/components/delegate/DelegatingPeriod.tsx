@@ -31,7 +31,7 @@ const DelegatingPeriod: React.FC<DelegatingPeriodProps> = ({
   setSelectedPeriod,
   setApy,
 }) => {
-  const { formatNumber, parseNumber } = useNumberFormat();
+  const { formatNumber } = useNumberFormat();
 
   return (
     <article className="article-container-style flex flex-col p-4">

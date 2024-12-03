@@ -1,5 +1,6 @@
 import React from 'react';
 import ProgressBar from '../common/ProgressBar';
+import { guardianAmountTotal } from '../../config/delegateConfig';
 
 interface GuardianPanelProps {
   key: number;
@@ -8,8 +9,6 @@ interface GuardianPanelProps {
   isSelected: boolean;
   onClick: () => void;
 }
-
-const guardianAmountTotal = 40000000;
 
 const GuardianPanel: React.FC<GuardianPanelProps> = ({
   key,

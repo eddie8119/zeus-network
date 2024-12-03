@@ -2,6 +2,8 @@ import { GuardianOption } from '../types/delegate';
 
 export const balance: number = 1000000;
 
+export const guardianAmountTotal: number = 40000000;
+
 export const guardiansList: GuardianOption[] = [
   { id: 0, name: 'Guardian1', amount: 5000000 },
   { id: 1, name: 'Guardian2', amount: 33000000 },
