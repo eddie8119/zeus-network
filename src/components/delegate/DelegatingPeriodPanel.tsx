@@ -1,6 +1,6 @@
 import React from 'react';
 
-interface DelegatingPeriodButtonProps {
+interface DelegatingPeriodPanelProps {
   key: number;
   epochs: number;
   apy: number;
@@ -8,7 +8,7 @@ interface DelegatingPeriodButtonProps {
   onClick: () => void;
 }
 
-const DelegatingPeriodButton: React.FC<DelegatingPeriodButtonProps> = ({
+const DelegatingPeriodPanel: React.FC<DelegatingPeriodPanelProps> = ({
   key,
   epochs,
   apy,
@@ -32,4 +32,4 @@ const DelegatingPeriodButton: React.FC<DelegatingPeriodButtonProps> = ({
   );
 };
 
-export default DelegatingPeriodButton;
+export default DelegatingPeriodPanel;

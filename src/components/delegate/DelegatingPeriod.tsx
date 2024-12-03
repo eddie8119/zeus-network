@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import DelegatingPeriodButton from './DelegatingPeriodButton';
+import React from 'react';
+import DelegatingPeriodPanel from './DelegatingPeriodPanel';
 import info from '../../assets/info.svg';
 import zeusToken from '../../assets/zeus-token.svg';
 import lineChartUp from '../../assets/epochInfo/line-chart-up-filled.svg';
@@ -45,7 +45,7 @@ const DelegatingPeriod: React.FC<DelegatingPeriodProps> = ({
 
       <div className="mb-3 grid grid-cols-2 gap-2 sm:grid-cols-4" aria-label="Delegating periods">
         {periodsList.map(period => (
-          <DelegatingPeriodButton
+          <DelegatingPeriodPanel
             key={period.id}
             epochs={period.epochs}
             apy={period.apy}
