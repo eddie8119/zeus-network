@@ -7,15 +7,6 @@
 }
 
 .zeus-node-gradient {
-  background: linear-gradient(90deg, #FFEB83 50%, #FFBF83 50%, #E677E9 50%, #B283FF 50%);
-  background: linear-gradient(90deg, 
-    color(display-p3 1 0.9216 0.5137) 50%,
-    color(display-p3 1 0.7490 0.5137) 50%,
-    color(display-p3 0.9020 0.4667 0.9137) 50%,
-    color(display-p3 0.6980 0.5137 1) 50%
-  );
-  -webkit-background-clip: text;
-  background-clip: text;
   color: #F1F0F3;
   color: color(display-p3 0.9451 0.9412 0.9529); 
   font-size: 11px;
@@ -23,5 +14,14 @@
   font-weight: 500;
   line-height: 16px; 
   letter-spacing: 0.55px;
-  text-transform: uppercase; 
+  text-transform: uppercase;
+  background: linear-gradient(120deg, 
+    #F5E4B3 0%,
+    #E8C4B0 33%,
+    #DEB8E0 66%,
+    #C5B8E8 100%
+  ); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent; //文字漸層效果在所有瀏覽器中正常顯示
+  background-clip: text; 
 }
