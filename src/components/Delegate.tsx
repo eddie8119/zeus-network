@@ -1,26 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import zeusToken from '../assets/zeus-token.svg';
-import GuardianPanel from './delegate/GuardianPanel';
 import DelegatingPeriod from './delegate/DelegatingPeriod';
 import DelegateButton from './delegate/DelegateButton';
-import DepositInput from './delegate/DepositInput';
+import GuardianSection from './delegate/GuardianSection';
+import DepositSection from './delegate/DepositSection';
 
-interface GuardianOption {
-  id: number;
-  name: string;
-  amount: number;
-}
-
-const balance: number = 1000000;
-const guardiansList: GuardianOption[] = [
-  { id: 0, name: 'Guardian1', amount: 5000000 },
-  { id: 1, name: 'Guardian2', amount: 33000000 },
-  { id: 2, name: 'Guardian3', amount: 4400000 },
-  { id: 3, name: 'Guardian4', amount: 20000000 },
-  { id: 4, name: 'Guardian5', amount: 16000000 },
-  { id: 5, name: 'Guardian6', amount: 18000000 },
-  { id: 6, name: 'Guardian7', amount: 19000000 },
-];
+import { balance, guardiansList } from '../config/delegateConfig';
 
 const Delegate: React.FC = () => {
   const [selectedGuardian, setSelectedGuardian] = useState<number>(0);
@@ -42,25 +26,7 @@ const Delegate: React.FC = () => {
       <div className="outer-container-style-mobile flex w-full flex-col gap-2 p-2 sm:flex-row sm:gap-3 sm:p-0">
         {/* left column - deposit and period selection */}
         <div className="flex flex-col gap-4 sm:w-1/2">
-          <article className="article-container-style flex flex-col gap-3 p-4">
-            {/* deposit input */}
-            <form>
-              <div className="mb-2 flex h-[18px] items-center justify-between">
-                <label
-                  htmlFor="deposit"
-                  className="text-[16px] font-semibold leading-4 text-text-primary"
-                >
-                  Deposit
-                </label>
-                <div className="flex text-[14px] text-text-medium">
-                  <p className="font-semibold">Balance</p>
-                  <img src={zeusToken} alt="ZEUS token" className="ml-2 mr-1 h-[18px] w-[18px]" />
-                  <p className="font-medium">{balance.toLocaleString()}</p>
-                </div>
-              </div>
-              <DepositInput amount={amount} setAmount={setAmount} balance={balance} />
-            </form>
-          </article>
+          <DepositSection amount={amount} setAmount={setAmount} balance={balance} />
 
           {/* desktop period selection */}
           <div className="hidden sm:block">
@@ -77,22 +43,11 @@ const Delegate: React.FC = () => {
         </div>
 
         {/* right column - guardian selection */}
-        <article className="article-container-style flex flex-1 flex-col p-4 sm:w-1/2">
-          <header className="mb-4">
-            <h2 className="article-container-title">Select a Guardian</h2>
-          </header>
-          <article className="flex max-h-[360px] w-full flex-col gap-2 overflow-y-scroll sm:max-h-[340px]">
-            {guardiansList.map(guardian => (
-              <GuardianPanel
-                key={guardian.id}
-                name={guardian.name}
-                amount={guardian.amount}
-                isSelected={selectedGuardian === guardian.id}
-                onClick={() => setSelectedGuardian(guardian.id)}
-              />
-            ))}
-          </article>
-        </article>
+        <GuardianSection
+          guardiansList={guardiansList}
+          selectedGuardian={selectedGuardian}
+          setSelectedGuardian={setSelectedGuardian}
+        />
 
         {/* mobile period selection */}
         <div className="flex flex-col gap-2 sm:hidden">
