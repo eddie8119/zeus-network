@@ -26,7 +26,7 @@ const EpochPopup: React.FC<EpochPopupProps> = ({ popupRef, className }) => {
           </p>
         </div>
         <a
-          href=""
+          href="/"
           className="view-more-gradient view-more-gradient flex items-center text-[16px] font-semibold leading-[18.2px]"
         >
           <span>View More</span>
