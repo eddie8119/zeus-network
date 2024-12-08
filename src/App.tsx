@@ -1,17 +1,15 @@
-import React from 'react';
-import MainLayout from './layouts/MainLayout';
-import EpochInfo from './components/EpochInfo';
-import Delegate from './components/Delegate';
-import TotalLocked from './components/TotalLocked';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
 
-const App: React.FC = () => {
+function App() {
   return (
-    <MainLayout>
-      <EpochInfo />
-      <Delegate />
-      <TotalLocked />
-    </MainLayout>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/delegate" element={<Home />} />
+      </Routes>
+    </Router>
   );
-};
+}
 
 export default App;
