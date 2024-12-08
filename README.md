@@ -1,3 +1,7 @@
+# Record of concepts encountered during process
+
+Some of the problems encountered are recorded in this [blog](https://medium.com/@is_code_not_cold/%E5%89%8D%E7%AB%AF%E5%88%87%E7%89%88%E9%81%8E%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%A7%80%E5%BF%B5%E7%B4%80%E9%8C%84-6ddd2b2aef33).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
