@@ -3,9 +3,7 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Rethink Sans'],
-      },
+      fontFamily: {},
       fontWeight: {
         extrabold: 800,
       },
