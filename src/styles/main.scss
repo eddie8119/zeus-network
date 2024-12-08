@@ -15,7 +15,10 @@
 }
 
 body {  
-  background-color: $background-primary;
+  background: $background-primary;
+  @supports (color: color(display-p3 0 0 0)) {
+    background: $background-primary-p3;
+  }
   color: $text-primary;
   font-family: 'Rethink Sans', system-ui, sans-serif; //設置fallback
   -webkit-font-smoothing: antialiased;
