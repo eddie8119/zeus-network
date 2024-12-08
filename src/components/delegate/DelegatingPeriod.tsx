@@ -67,7 +67,9 @@ const DelegatingPeriod: React.FC<DelegatingPeriodProps> = ({
       <div className="background-panel flex w-full items-center justify-between rounded-xl px-4 py-[13px]">
         <div className="flex space-x-2">
           <img src={lineChartUp} alt="line chart up" className="h-[18px] w-[18px]" />
-          <p className="text-[14px] font-semibold text-text-primary">Estimated Rewards</p>
+          <p className="text-[14px] font-semibold text-text-primary lg:text-[16px]">
+            Estimated Rewards
+          </p>
         </div>
         <div className="flex space-x-2">
           <img src={zeusToken} alt="ZEUS token" className="h-[24px] w-[24px]" />

@@ -12,7 +12,7 @@ const DepositSection: React.FC<DepositSectionProps> = ({ amount, setAmount, bala
   return (
     <article className="article-container-style flex flex-col gap-3 p-4">
       <form>
-        <div className="mb-2 flex h-[18px] items-center justify-between">
+        <div className="mb-3 flex h-[18px] items-center justify-between">
           <label
             htmlFor="deposit"
             className="text-[16px] font-semibold leading-4 text-text-primary"
