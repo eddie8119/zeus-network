@@ -36,6 +36,7 @@ const GuardianPanel: React.FC<GuardianPanelProps> = ({
         height="10px"
         active={isSelected}
         className="lg:hidden"
+        barClassName="gradient-data-progress"
       />
       <p className="hidden text-[14px] font-medium lg:block">
         $ZEUS {amount.toLocaleString()} / {guardianAmountTotal.toLocaleString()}
