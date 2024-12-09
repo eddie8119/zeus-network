@@ -1,51 +1,20 @@
-# Record of concepts encountered during process
+## Record of concepts encountered during process
 
 Some of the problems encountered are recorded in this [blog](https://medium.com/@is_code_not_cold/%E5%89%8D%E7%AB%AF%E5%88%87%E7%89%88%E9%81%8E%E7%A8%8B%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E8%A7%80%E5%BF%B5%E7%B4%80%E9%8C%84-6ddd2b2aef33).
 
-# Getting Started with Create React App
+## Records of discussions during the process
+1.remaining 的時間資訊，桌機沒有呈現到，應該要呈現在哪?\
+2.手機數據條沒有搭配數字，很難感知數字，是否會在一旁增加數值?\
+3.這區list 數據可能會很多， 是否會有pagination的規劃?\
+4.這邊底部在圖學上，是不是不夠精準。底部應該要把buttom-padding，表現出來，蓋一個瀏海
+5.Select Delegating Period，手機/桌機 文字資訊是否要統一?\
+6.Powered by 手機時 有黑框，是故意的嗎? (還是被我誤觸編輯到的)\
+7.Total $ZEUS locked 大小寫未一致，手機/桌機 文字資訊是否要統一?\
+8.有點細和延伸:\
+font-size 與 line-height 的比例是不是通常設計師會定成固定的倍數關係。
+但這專案是沒有固定的關係。(如圖區域為例，左右兩側的字塊，左邊是比是 16/16 右邊是比是 18/14)\
+9.header作法是不是算少見，通常是貼頂的。這裡是有脫開的。
+這樣網頁在滑動時，下面的畫面在往上移動時，就會從這個縫露出來。
+(我故意做了一個跟背景一樣的瀏海 好遮起來)\
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-"# zeus-network" 
