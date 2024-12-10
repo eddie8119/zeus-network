@@ -1,13 +1,13 @@
 import React from 'react';
-import DelegatingPeriodPanel from './DelegatingPeriodPanel';
+import lineChartUp from '../../assets/epochInfo/line-chart-up-filled.svg';
 import info from '../../assets/info.svg';
 import zeusToken from '../../assets/zeus-token.svg';
-import lineChartUp from '../../assets/epochInfo/line-chart-up-filled.svg';
 import { useNumberFormat } from '../../hooks/useNumberFormat';
+import DelegatingPeriodPanel from './DelegatingPeriodPanel';
 
 interface DelegatingPeriodProps {
   calculateRewards: number;
-  selectedPeriod: number;
+  selectedPeriod: number | undefined;
   setSelectedPeriod: (value: number) => void;
   setApy: (value: number) => void;
 }

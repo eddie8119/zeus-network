@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
-import DelegatingPeriod from './delegate/DelegatingPeriod';
+import React, { useEffect, useState } from 'react';
 import DelegateButton from './delegate/DelegateButton';
-import GuardianSection from './delegate/GuardianSection';
+import DelegatingPeriod from './delegate/DelegatingPeriod';
 import DepositSection from './delegate/DepositSection';
+import GuardianSection from './delegate/GuardianSection';
 
 import { balance, guardiansList } from '../config/delegateConfig';
 
@@ -10,7 +10,7 @@ const Delegate: React.FC = () => {
   const [selectedGuardian, setSelectedGuardian] = useState<number>(0);
   const [amount, setAmount] = useState<number | null>(null);
   const [apy, setApy] = useState<number | null>(null);
-  const [selectedPeriod, setSelectedPeriod] = useState<number>(0);
+  const [selectedPeriod, setSelectedPeriod] = useState<number | undefined>(undefined);
   const [calculateRewards, setCalculateRewards] = useState<number>(0);
 
   useEffect(() => {
