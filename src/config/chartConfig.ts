@@ -1,6 +1,6 @@
 import { ChartData, ChartOptionsType } from '../types/chart';
 
-export const chartData:ChartData = {
+export const chartData: ChartData = {
   labels: ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
   datasets: [
     {

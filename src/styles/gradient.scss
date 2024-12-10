@@ -4,48 +4,60 @@
   -webkit-text-fill-color: transparent;
 }
 
-.gradient-primary-color{
+.gradient-primary-color {
   border-radius: 12px;
-  background: linear-gradient(310deg, #FFEA71 2.43%, #FFBC78 24.82%, #F770EF 59.61%, #BB81FF 86.25%);
-  background: linear-gradient(310deg, color(display-p3 1 0.9216 0.5137) 2.43%, color(display-p3 1 0.749 0.5137) 24.82%, color(display-p3 0.9031 0.4685 0.912) 59.61%, color(display-p3 0.6985 0.5137 1) 86.25%);
-  box-shadow: 0px 4px 4px 0px rgba(255, 255, 255, 0.25) inset, 0px 4px 12px 0px rgba(255, 255, 255, 0.50) inset;
-  box-shadow: 0px 4px 4px 0px color(display-p3 1 1 1 / 0.25) inset, 0px 4px 12px 0px color(display-p3 1 1 1 / 0.50) inset; 
+  background: linear-gradient(
+    310deg,
+    #ffea71 2.43%,
+    #ffbc78 24.82%,
+    #f770ef 59.61%,
+    #bb81ff 86.25%
+  );
+  background: linear-gradient(
+    310deg,
+    color(display-p3 1 0.9216 0.5137) 2.43%,
+    color(display-p3 1 0.749 0.5137) 24.82%,
+    color(display-p3 0.9031 0.4685 0.912) 59.61%,
+    color(display-p3 0.6985 0.5137 1) 86.25%
+  );
+  box-shadow:
+    0px 4px 4px 0px rgba(255, 255, 255, 0.25) inset,
+    0px 4px 12px 0px rgba(255, 255, 255, 0.5) inset;
+  box-shadow:
+    0px 4px 4px 0px color(display-p3 1 1 1 / 0.25) inset,
+    0px 4px 12px 0px color(display-p3 1 1 1 / 0.5) inset;
 }
 
-.gradient-data-progress{
-  background-color: $color-zeus; 
+.gradient-data-progress {
+  background-color: $color-zeus;
   @supports (color: color(display-p3 0 0 0)) {
-    background-color: color(display-p3 0.9903 0.5137 1.0000);
+    background-color: color(display-p3 0.9903 0.5137 1);
   }
 }
 
 .zeus-node-gradient {
-  color: #F1F0F3;
-  color: color(display-p3 0.9451 0.9412 0.9529); 
+  color: #f1f0f3;
+  color: color(display-p3 0.9451 0.9412 0.9529);
   font-size: 11px;
   font-style: normal;
   font-weight: 500;
-  line-height: 16px; 
+  line-height: 16px;
   letter-spacing: 0.55px;
   text-transform: uppercase;
-  background: linear-gradient(120deg, 
-    #F5E4B3 0%,
-    #E8C4B0 33%,
-    #DEB8E0 66%,
-    #C5B8E8 100%
-  ); 
+  background: linear-gradient(120deg, #f5e4b3 0%, #e8c4b0 33%, #deb8e0 66%, #c5b8e8 100%);
   @include text-fill;
 }
 
-.view-more-gradient {   
-  color: #F1F0F3;
+.view-more-gradient {
+  color: #f1f0f3;
   color: color(display-p3 0.9451 0.9412 0.9529);
-  background: linear-gradient(96deg, 
-    #BFA36B 0%,
-    #AD8960 16%,
-    #9C5F91 34%,
-    #755A94 52%,
-    #9A999B 97%
+  background: linear-gradient(
+    96deg,
+    #bfa36b 0%,
+    #ad8960 16%,
+    #9c5f91 34%,
+    #755a94 52%,
+    #9a999b 97%
   );
   @include text-fill;
 }

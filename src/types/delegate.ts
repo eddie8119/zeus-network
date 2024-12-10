@@ -3,5 +3,3 @@ export interface GuardianOption {
   name: string;
   amount: number;
 }
-
-

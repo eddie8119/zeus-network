@@ -8,14 +8,14 @@ const socialLinks: SocialLink[] = [
     id: 'twitter',
     icon: XTwitter,
     link: 'https://twitter.com/zeus',
-    alt: 'Twitter'
+    alt: 'Twitter',
   },
   {
     id: 'discord',
     icon: Discord,
     link: 'https://discord.gg/zeus',
-    alt: 'Discord'
-  }
+    alt: 'Discord',
+  },
 ];
 
 const SocialLinks: React.FC = () => {

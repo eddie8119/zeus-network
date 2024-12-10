@@ -14,7 +14,7 @@
   box-sizing: border-box;
 }
 
-body {  
+body {
   background: $background-primary;
   @supports (color: color(display-p3 0 0 0)) {
     background: $background-primary-p3;
@@ -25,12 +25,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-
 // Global styles
 a {
   color: inherit;
   text-decoration: none;
-  @include transition;  
+  @include transition;
 }
 
 button {
@@ -38,7 +37,7 @@ button {
   border: none;
   cursor: pointer;
   outline: none;
-  
+
   &:disabled {
     cursor: not-allowed;
   }
@@ -49,30 +48,29 @@ input {
   background: none;
   padding: 0;
   margin: 0;
-  
+
   &:focus {
     outline: none;
     box-shadow: none;
   }
 }
 
-
 // Utility classes
 .container {
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 ;
+  padding: 0;
 }
 
 .header-footer-container {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 ;
+  padding: 0;
 }
 
-.text-gradient {  
+.text-gradient {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -96,10 +94,10 @@ input {
   @include transition(opacity, 0.3s);
 }
 
-.article-container-title{
+.article-container-title {
   color: $text-primary;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 16px;   
+  line-height: 16px;
 }
