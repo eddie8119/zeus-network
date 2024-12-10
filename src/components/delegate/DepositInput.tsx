@@ -11,21 +11,17 @@ interface DepositInputProps {
 const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance }) => {
   const { formatNumber, parseNumber } = useNumberFormat();
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    //移除輸入值中的所有逗號
-    const rawValue = e.target.value.replace(/,/g, '');
-    if (rawValue === '') {
-      setAmount(0);
-      return;
-    }
-    const numValue = parseNumber(rawValue);
-    if (numValue > balance) {
-      setAmount(balance);
-      return;
-    }
-    if (!isNaN(numValue)) {
-      setAmount(numValue);
-    }
+  const handleDepositChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    //先檢查空值
+    if (!value) return;
+
+    //移除輸入值中的逗號
+    const parsedValue = parseNumber(e.target.value);
+
+    if (isNaN(parsedValue)) return;
+
+    setAmount(Math.min(parsedValue, balance));
   };
 
   return (
@@ -40,7 +36,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
           type="text"
           inputMode="numeric"
           value={amount !== null ? formatNumber(amount) : ''}
-          onChange={handleChange}
+          onChange={handleDepositChange}
           className="input-inner-text w-full bg-transparent text-right text-[16px] font-semibold leading-[22px] outline-none transition-colors group-hover:text-text-primary"
           aria-label="Deposit amount"
           placeholder="0"
