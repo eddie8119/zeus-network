@@ -8,17 +8,17 @@ import { balance, guardiansList } from '../config/delegateConfig';
 
 const Delegate: React.FC = () => {
   const [selectedGuardian, setSelectedGuardian] = useState<number>(0);
-  const [amount, setAmount] = useState<number | null>(null);
-  const [apy, setApy] = useState<number | null>(null);
+  const [amount, setAmount] = useState<number | undefined>(undefined);
+  const [apy, setApy] = useState<number | undefined>(undefined);
   const [selectedPeriod, setSelectedPeriod] = useState<number | undefined>(undefined);
   const [calculateRewards, setCalculateRewards] = useState<number>(0);
 
   useEffect(() => {
-    if (amount === null) {
+    if (amount === undefined) {
       setCalculateRewards(0);
       return;
     }
-    if (apy === null) return;
+    if (apy === undefined) return;
     const value = Math.round(amount * (1 + apy / 100));
     setCalculateRewards(value);
   }, [amount, apy]);

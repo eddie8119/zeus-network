@@ -3,7 +3,7 @@ import zeusToken from '../../assets/zeus-token.svg';
 import DepositInput from './DepositInput';
 
 export interface DepositSectionProps {
-  amount: number | null;
+  amount: number | undefined;
   setAmount: (amount: number) => void;
   balance: number;
 }
