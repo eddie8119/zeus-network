@@ -14,10 +14,13 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
   const handleDepositChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
     //先檢查空值
-    if (!value) return;
+    if (!value) {
+      setAmount(0);
+      return;
+    }
 
     //移除輸入值中的逗號
-    const parsedValue = parseNumber(e.target.value);
+    const parsedValue = parseNumber(value);
 
     if (isNaN(parsedValue)) return;
 
@@ -34,7 +37,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
         <input
           id="deposit"
           type="text"
-          inputMode="numeric"
+          inputMode="decimal"
           value={amount !== undefined ? formatNumber(amount) : ''}
           onChange={handleDepositChange}
           className="input-inner-text w-full bg-transparent text-right text-[16px] font-semibold leading-[22px] outline-none transition-colors group-hover:text-text-primary"
