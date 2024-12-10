@@ -1,7 +1,6 @@
 import React from 'react';
 
 interface DelegatingPeriodPanelProps {
-  key: number;
   epochs: number;
   apy: number;
   isSelected: boolean;
@@ -9,7 +8,6 @@ interface DelegatingPeriodPanelProps {
 }
 
 const DelegatingPeriodPanel: React.FC<DelegatingPeriodPanelProps> = ({
-  key,
   epochs,
   apy,
   isSelected,
@@ -17,7 +15,6 @@ const DelegatingPeriodPanel: React.FC<DelegatingPeriodPanelProps> = ({
 }) => {
   return (
     <button
-      key={key}
       onClick={onClick}
       className={`btn-active flex flex-col gap-2 rounded-xl px-4 py-3 text-[14px] leading-[18px] ${
         isSelected

@@ -1,27 +1,19 @@
 import React from 'react';
-import ProgressBar from '../common/ProgressBar';
 import { guardianAmountTotal } from '../../config/delegateConfig';
+import ProgressBar from '../common/ProgressBar';
 
 interface GuardianPanelProps {
-  key: number;
   name: string;
   amount: number;
   isSelected: boolean;
   onClick: () => void;
 }
 
-const GuardianPanel: React.FC<GuardianPanelProps> = ({
-  key,
-  name,
-  amount,
-  isSelected,
-  onClick,
-}) => {
+const GuardianPanel: React.FC<GuardianPanelProps> = ({ name, amount, isSelected, onClick }) => {
   const progressBarNumber = (amount / guardianAmountTotal) * 100;
 
   return (
     <button
-      key={key}
       onClick={onClick}
       className={`btn-active flex items-center justify-between rounded-xl px-4 py-3 ${
         isSelected
