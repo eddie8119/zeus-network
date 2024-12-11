@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import zeusToken from '../../assets/zeus-token.svg';
-import { useDebounce } from '../../hooks/useDebounce';
 import { useNumberFormat } from '../../hooks/useNumberFormat';
 
 interface DepositInputProps {
@@ -11,24 +10,21 @@ interface DepositInputProps {
 
 const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance }) => {
   const { formatNumber, parseNumber } = useNumberFormat();
-  const [inputValue, setInputValue] = useState<string>('');
-  const debouncedInputValue = useDebounce(inputValue);
 
-  useEffect(() => {
+  const handleDepositChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
     //先檢查空值
-    if (!debouncedInputValue) {
+    if (!value) {
       setAmount(0);
       return;
     }
 
-    const parsedValue = parseNumber(debouncedInputValue);
+    //移除輸入值中的逗號
+    const parsedValue = parseNumber(value);
+
     if (isNaN(parsedValue)) return;
 
     setAmount(Math.min(parsedValue, balance));
-  }, [debouncedInputValue, balance, setAmount, parseNumber]);
-
-  const handleDepositChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
   };
 
   return (
@@ -42,7 +38,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
           id="deposit"
           type="text"
           inputMode="decimal"
-          value={inputValue || (amount !== undefined ? formatNumber(amount) : '')}
+          value={amount !== undefined ? formatNumber(amount) : ''}
           onChange={handleDepositChange}
           className="input-inner-text w-full bg-transparent text-right text-[16px] font-semibold leading-[22px] outline-none transition-colors group-hover:text-text-primary"
           aria-label="Deposit amount"
@@ -52,10 +48,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
           type="button"
           className="gradient-btn btn-active rounded-xl px-4 py-2 text-[14px] font-semibold leading-[20px] text-black"
           aria-label="Set maximum amount"
-          onClick={() => {
-            setAmount(balance);
-            setInputValue('');
-          }}
+          onClick={() => setAmount(balance)}
         >
           MAX
         </button>
