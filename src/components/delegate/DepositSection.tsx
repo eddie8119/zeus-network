@@ -3,12 +3,11 @@ import zeusToken from '../../assets/zeus-token.svg';
 import DepositInput from './DepositInput';
 
 export interface DepositSectionProps {
-  amount: number | undefined;
   setAmount: (amount: number) => void;
   balance: number;
 }
 
-const DepositSection: React.FC<DepositSectionProps> = ({ amount, setAmount, balance }) => {
+const DepositSection: React.FC<DepositSectionProps> = ({ setAmount, balance }) => {
   return (
     <article className="article-container-style flex flex-col gap-3 p-4">
       <form>
@@ -25,7 +24,7 @@ const DepositSection: React.FC<DepositSectionProps> = ({ amount, setAmount, bala
             <p className="font-medium">{balance.toLocaleString()}</p>
           </div>
         </div>
-        <DepositInput amount={amount} setAmount={setAmount} balance={balance} />
+        <DepositInput setAmount={setAmount} balance={balance} />
       </form>
     </article>
   );

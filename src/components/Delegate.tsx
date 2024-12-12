@@ -31,7 +31,7 @@ const Delegate: React.FC = () => {
       <div className="outer-container-style-mobile flex w-full flex-col gap-2 p-2 sm:flex-row sm:gap-3 sm:p-0">
         {/* left column - deposit and period selection */}
         <div className="flex flex-col gap-4 sm:w-1/2">
-          <DepositSection amount={amount} setAmount={setAmount} balance={balance} />
+          <DepositSection setAmount={setAmount} balance={balance} />
 
           {/* desktop period selection */}
           <div className="hidden sm:block">

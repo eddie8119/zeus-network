@@ -4,12 +4,11 @@ import { useDebounce } from '../../hooks/useDebounce';
 import { useNumberFormat } from '../../hooks/useNumberFormat';
 
 interface DepositInputProps {
-  amount: number | undefined;
   setAmount: (value: number) => void;
   balance: number;
 }
 
-const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance }) => {
+const DepositInput: React.FC<DepositInputProps> = ({ setAmount, balance }) => {
   const { formatNumber, inputFormatNumber, parseNumber } = useNumberFormat();
   const [inputValue, setInputValue] = useState<string>('');
   const debouncedValue = useDebounce(inputValue);
