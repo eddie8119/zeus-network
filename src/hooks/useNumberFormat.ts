@@ -5,14 +5,14 @@ interface UseNumberFormatOptions {
 }
 
 export const useNumberFormat = (options: UseNumberFormatOptions = {}) => {
+  // 默認值
   const {
-    maximumFractionDigits = 10, // 小數位數
+    maximumFractionDigits = 18, // 小數位數，默認為0（不顯示小數）
     useGrouping = true, // 是否使用千位分隔符，默認為true
     locale = 'en-US',
   } = options;
 
-  const formatNumber = (value: number | undefined): string => {
-    if (value === undefined) return '';
+  const formatNumber = (value: number): string => {
     return value.toLocaleString(locale, {
       maximumFractionDigits,
       useGrouping,
@@ -30,8 +30,14 @@ export const useNumberFormat = (options: UseNumberFormatOptions = {}) => {
     return parseFloat(cleanValue);
   };
 
+  const inputFormatNumber = (value: string): string => {
+    const parsedValue = parseNumber(value);
+    return formatNumber(parsedValue);
+  };
+
   return {
     formatNumber,
+    inputFormatNumber,
     parseNumber,
   };
 };

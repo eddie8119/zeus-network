@@ -1,5 +1,6 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import zeusToken from '../../assets/zeus-token.svg';
+import { useDebounce } from '../../hooks/useDebounce';
 import { useNumberFormat } from '../../hooks/useNumberFormat';
 
 interface DepositInputProps {
@@ -9,19 +10,23 @@ interface DepositInputProps {
 }
 
 const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance }) => {
-  const { formatNumber, parseNumber } = useNumberFormat();
+  const { formatNumber, inputFormatNumber, parseNumber } = useNumberFormat();
+  const [inputValue, setInputValue] = useState<string>('');
+  const debouncedValue = useDebounce(inputValue);
 
-  const handleDepositChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement>) => {
-      const value = e.target.value;
-      const parsedValue = parseNumber(value);
-      setAmount(Math.min(parsedValue, balance));
-    },
-    [setAmount, parseNumber, balance]
-  );
+  // 當防抖值改變時更新 amount
+  useEffect(() => {
+    const parsedValue = parseNumber(debouncedValue);
+    // setAmount(Math.min(parsedValue, balance));
+  }, [debouncedValue, setAmount, parseNumber, balance]);
+
+  const handleDepositChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(e.target.value);
+  }, []);
 
   const handleMaxClick = useCallback(() => {
     setAmount(balance);
+    setInputValue('');
   }, [setAmount, balance]);
 
   return (
@@ -35,7 +40,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
           id="deposit"
           type="text"
           inputMode="decimal"
-          value={amount !== undefined ? formatNumber(amount) : ''}
+          value={inputFormatNumber(inputValue)}
           onChange={handleDepositChange}
           className="input-inner-text w-full bg-transparent text-right text-[16px] font-semibold leading-[22px] outline-none transition-colors group-hover:text-text-primary"
           aria-label="Deposit amount"
