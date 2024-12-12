@@ -1,3 +1,5 @@
+import { balance } from '../config/delegateConfig';
+
 interface UseNumberFormatOptions {
   maximumFractionDigits?: number;
   useGrouping?: boolean;

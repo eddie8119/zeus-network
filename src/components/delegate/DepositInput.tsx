@@ -17,17 +17,26 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
   // 當防抖值改變時更新 amount
   useEffect(() => {
     const parsedValue = parseNumber(debouncedValue);
-    // setAmount(Math.min(parsedValue, balance));
+    setAmount(Math.min(parsedValue, balance));
   }, [debouncedValue, setAmount, parseNumber, balance]);
 
-  const handleDepositChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  }, []);
+  const handleDepositChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      const parsedInputValue = parseNumber(value);
+      if (parsedInputValue > balance) {
+        return setInputValue(formatNumber(balance));
+      }
+
+      setInputValue(value);
+    },
+    [balance, parseNumber, formatNumber]
+  );
 
   const handleMaxClick = useCallback(() => {
     setAmount(balance);
-    setInputValue('');
-  }, [setAmount, balance]);
+    setInputValue(formatNumber(balance));
+  }, [setAmount, balance, formatNumber]);
 
   return (
     <div className="input-container group flex max-h-14 items-center gap-4 p-2 pr-3">
