@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import zeusToken from '../../assets/zeus-token.svg';
 import { useNumberFormat } from '../../hooks/useNumberFormat';
 
@@ -11,21 +11,18 @@ interface DepositInputProps {
 const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance }) => {
   const { formatNumber, parseNumber } = useNumberFormat();
 
-  const handleDepositChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value;
-    //先檢查空值
-    if (!value) {
-      setAmount(0);
-      return;
-    }
+  const handleDepositChange = useCallback(
+    (e: React.ChangeEvent<HTMLInputElement>) => {
+      const value = e.target.value;
+      const parsedValue = parseNumber(value);
+      setAmount(Math.min(parsedValue, balance));
+    },
+    [setAmount, parseNumber, balance]
+  );
 
-    //移除輸入值中的逗號
-    const parsedValue = parseNumber(value);
-
-    if (isNaN(parsedValue)) return;
-
-    setAmount(Math.min(parsedValue, balance));
-  };
+  const handleMaxClick = useCallback(() => {
+    setAmount(balance);
+  }, [setAmount, balance]);
 
   return (
     <div className="input-container group flex max-h-14 items-center gap-4 p-2 pr-3">
@@ -48,7 +45,7 @@ const DepositInput: React.FC<DepositInputProps> = ({ amount, setAmount, balance 
           type="button"
           className="gradient-btn btn-active rounded-xl px-4 py-2 text-[14px] font-semibold leading-[20px] text-black"
           aria-label="Set maximum amount"
-          onClick={() => setAmount(balance)}
+          onClick={handleMaxClick}
         >
           MAX
         </button>
