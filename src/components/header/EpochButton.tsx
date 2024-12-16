@@ -11,7 +11,7 @@ const EpochButton: React.FC<EpochButtonProps> = ({ className }) => {
   const [isOpen, setIsOpen] = useState(false);
   const popupRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
-  useClickOutside({ popupRef, buttonRef, isOpen, setIsOpen });
+  useClickOutside(popupRef, buttonRef, isOpen, setIsOpen);
 
   return (
     <div className="relative">

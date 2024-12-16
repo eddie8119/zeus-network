@@ -1,18 +1,11 @@
 import { useEffect } from 'react';
 
-interface UseClickOutsideOptions {
-  popupRef: React.RefObject<HTMLElement>;
-  buttonRef: React.RefObject<HTMLElement>;
-  isOpen: boolean;
-  setIsOpen: (open: boolean) => void;
-}
-
-export const useClickOutside = ({
-  popupRef,
-  buttonRef,
-  isOpen,
-  setIsOpen,
-}: UseClickOutsideOptions) => {
+export const useClickOutside = (
+  popupRef: React.RefObject<HTMLElement>,
+  buttonRef: React.RefObject<HTMLElement>,
+  isOpen: boolean,
+  setIsOpen: (open: boolean) => void
+): void => {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent | TouchEvent) => {
       if (
