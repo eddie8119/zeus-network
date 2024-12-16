@@ -4,11 +4,15 @@ import { NavItem } from '../../types/navigation';
 interface MobileNavProps {
   navList: NavItem[];
   currentPath: string;
+  popupRef: React.RefObject<HTMLDivElement>;
 }
 
-const MobileNav: React.FC<MobileNavProps> = ({ navList, currentPath }) => {
+const MobileNav: React.FC<MobileNavProps> = ({ navList, currentPath, popupRef }) => {
   return (
-    <nav className="article-container-style absolute mt-4 w-full flex-col space-y-2 p-3 lg:hidden">
+    <nav
+      ref={popupRef}
+      className="article-container-style absolute mt-4 w-full flex-col space-y-2 p-3 lg:hidden"
+    >
       {navList.map(item => (
         <a
           href={`/${item.id}`}

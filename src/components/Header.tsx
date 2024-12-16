@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
-import { useNavigation } from '../hooks/useNavigation';
-import { NavItem } from '../types/navigation';
+import React, { useRef, useState } from 'react';
 import DelegateIcon from '../assets/header/Delegate.svg';
 import DelegationsIcon from '../assets/header/Delegations.svg';
-import GuardiansIcon from '../assets/header/Guardians.svg';
 import DocIcon from '../assets/header/Doc.svg';
+import GuardiansIcon from '../assets/header/Guardians.svg';
+import { useClickOutside } from '../hooks/useClickOutside';
+import { useNavigation } from '../hooks/useNavigation';
+import { NavItem } from '../types/navigation';
 
-import Logo from './header/Logo';
-import DesktopNav from './header/DesktopNav';
-import MobileNav from './header/MobileNav';
-import EpochButton from './header/EpochButton';
 import ConnectButton from './header/ConnectButton';
+import DesktopNav from './header/DesktopNav';
+import EpochButton from './header/EpochButton';
+import Logo from './header/Logo';
 import MenuButtonMobileArea from './header/MenuButtonMobileArea';
+import MobileNav from './header/MobileNav';
 
 const navList: NavItem[] = [
   {
@@ -39,6 +40,9 @@ const navList: NavItem[] = [
 const Header: React.FC = () => {
   const { currentPath } = useNavigation();
   const [toggleMenu, setToggleMenu] = useState<boolean>(false);
+  const popupRef = useRef<HTMLDivElement>(null);
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  useClickOutside(popupRef, buttonRef, toggleMenu, setToggleMenu);
 
   return (
     <>
@@ -57,13 +61,19 @@ const Header: React.FC = () => {
               <ConnectButton className="hidden lg:flex" />
 
               {/* menu buttons - mobile */}
-              <MenuButtonMobileArea toggleMenu={toggleMenu} setToggleMenu={setToggleMenu} />
+              <MenuButtonMobileArea
+                buttonRef={buttonRef}
+                toggleMenu={toggleMenu}
+                setToggleMenu={setToggleMenu}
+              />
             </div>
           </div>
         </div>
 
         {/* navigation - mob */}
-        {toggleMenu && <MobileNav navList={navList} currentPath={currentPath} />}
+        {toggleMenu && (
+          <MobileNav popupRef={popupRef} navList={navList} currentPath={currentPath} />
+        )}
       </header>
 
       {/* backdrop */}
