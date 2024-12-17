@@ -1,4 +1,4 @@
-##Demo
+## Demo
 
 [Demo](https://zeus-network-demo.netlify.app/)
 
@@ -18,4 +18,4 @@ Some of the problems encountered are recorded in this [blog](https://medium.com/
 font-size 與 line-height 的比例是不是通常設計師會定成固定的倍數關係。
 但這專案是沒有固定的關係。(如圖區域為例，左右兩側的字塊，左邊是比是 16/16 右邊是比是 18/14)\
 8.header作法是不是算少見，通常是貼頂的。這裡是有脫開的。
-這樣網頁在滑動時，下面的畫面在往上移動時，就會從這個縫露出來。\
+這樣網頁在滑動時，下面的畫面在往上移動時，就會從這個縫露出來。
